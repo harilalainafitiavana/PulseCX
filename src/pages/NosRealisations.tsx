@@ -64,7 +64,7 @@ const galleryImages = [
     },
     {
         id: 8,
-        src: "https://images.unsplash.com/photo-1573164713988-2485fc7d6c3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
         title: "Réunion d'équipe",
         category: "Équipe",
         size: "small",
