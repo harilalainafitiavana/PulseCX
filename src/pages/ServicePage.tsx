@@ -1,15 +1,15 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Link, useParams } from "react-router-dom";
-import { 
-  ArrowRight, Headphones, TrendingUp, Settings, Cpu, 
+import {
+  ArrowRight, Headphones, TrendingUp, Settings, Cpu,
   CheckCircle2, Users, Clock, BarChart3, Shield,
   Zap, Target, Globe, Star, Award, Sparkles, Eye,
   FileText, Database, Calendar
 } from "lucide-react";
 
 const serviceData: Record<string, {
-  icon: typeof Headphones;
+  icon: any;
   title: string;
   subtitle: string;
   tagline: string;
@@ -18,9 +18,9 @@ const serviceData: Record<string, {
   methodology: Array<{ step: string; title: string; desc: string }>;
   stats: Array<{ value: string; label: string; icon: any }>;
   benefits: Array<{ title: string; desc: string; icon: any }>;
-  useCases: Array<{ 
-    title: string; 
-    desc: string; 
+  useCases: Array<{
+    title: string;
+    desc: string;
     image: string;
     points: string[];
     cta: string;
@@ -29,10 +29,10 @@ const serviceData: Record<string, {
 }> = {
   "customer-experience": {
     icon: Headphones,
-    title: "Customer Support & CX Operations",
+    title: "Customer Support externalisé, structuré et piloté",
     subtitle: "Excellence opérationnelle au service de vos clients",
-    tagline: "Offrez une expérience client exceptionnelle, 24/7",
-    description: "Nous gérons vos interactions clients avec la même exigence que vos équipes internes. Support multicanal, SAV, e-commerce et technique — structuré, piloté, mesuré.",
+    tagline: "PulseCX déploie des équipes support dédiées et met en place les processus, les outils et le pilotage nécessaires pour garantir une expérience client stable et performante - sur la durée.",
+    description: "Nous gérons vos interactions clients avec la même exigence que vos équipes internes. Support multicanal, SAV, e-commerce et technique — structurer, piloter, mesurer.",
     features: [
       { title: "Support multicanal", desc: "Voix, email, chat, réseaux sociaux - une expérience unifiée", icon: Headphones },
       { title: "SAV structuré", desc: "Processus clairs et résolution rapide", icon: Shield },
@@ -58,28 +58,47 @@ const serviceData: Record<string, {
       { title: "Équipes dédiées", desc: "Formées à vos process", icon: Users },
     ],
     useCases: [
-      { 
-        title: "E-commerce en forte croissance", 
-        desc: "Gérez les pics saisonniers sans recrutement interne",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        points: ["+300% de demandes pendant le Black Friday", "Support 24/7 multilingue", "Intégration avec votre CRM"],
+      {
+        title: "Support commande, livraison & SAV",
+        desc: "Gestion des demandes clients sur l'ensemble du parcours: avant/ pendant/ après livraison. Objectif: réduire la charge interne tout en maintenant un niveau de qualité constant.",
+        image: "https://portermetrics.com/wp-content/uploads/2025/05/E-commerce-dashboard-1.png",
+        points: [
+          "Suivi commande, retours, remboursements",
+          "Réclamations & litiges (pièces manquantes, colis endommagé)",
+          "Coordination logistique/ transport + escalades structurées"
+        ],
+        cta: "Découvrir ce cas client"
+      },
+      {
+        title: "Support utilisateur & support produit",
+        desc: "Traitement du support N1/N2 avec tri, qualification et escalade vers les équipes produit/tech. Objectif:accélérer la résolution et fiabiliser la boucle de feedback.",
+        image: "https://cdn.prod.website-files.com/6193d546dfb64eec20323f4a/633f2977a0a8b996890087b2_La%2520force%2520des%2520tags_0.png",
+        points: [
+          "Gestion tickets (Zendesk/ Intercom/ Jira Service...",
+          "Qualification, priorisation, reproduction & escalades",
+          "Base de connaissance: création, maintenance, réduction du volume"
+        ],
         cta: "Voir le cas client"
       },
-      { 
-        title: "SaaS - Support technique", 
-        desc: "Externalisez votre support niveau 1 pour vos utilisateurs",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        points: ["Réponse sous 2h garantie", "Taux de satisfaction 98%", "Escalade niveau 2 structurée"],
+      {
+        title: "Support administratif & gestion de dossiers",
+        desc: "Traitement de demandes répétitives et workflows de validation. Objectif: améliorer les délais de traitement et réduire la variance qualité.",
+        image: "https://www.openbee.com/wp-content/uploads/2022/03/workflow-circuit-de-validation-de-document.png",
+        points: [
+          "Prise en charge emails/ formulaires/ chat + suivi client",
+          "Contrôles, complétude, conformité & relances",
+          "Reporting: backlog, temps de traitement, qualité & rework"
+        ],
         cta: "Voir le cas client"
-      },
+      }
     ],
     ctaText: "Boostez votre expérience client",
   },
   "sales-revenue": {
     icon: TrendingUp,
-    title: "Sales Development & Revenue Ops",
+    title: "Lead Generation opérée, structurée et pilotée.",
     subtitle: "Générez du pipeline, qualifiez, convertissez",
-    tagline: "Transformez vos leads en opportunités qualifiées",
+    tagline: "PulseCX déploie des équipes commerciales dédiées et met en place les scripts, les outils et le pilotage nécessaires pour alimenter votre pipeline de manière fiable - sans dégrader l'image de marque ni la qualité des échanges.",
     description: "Notre équipe commerciale externalisée structure votre prospection B2B, qualifie vos leads et sécurise vos prises de rendez-vous avec rigueur et méthode.",
     features: [
       { title: "Prospection B2B", desc: "Ciblage précis et approche personnalisée", icon: Target },
@@ -106,28 +125,47 @@ const serviceData: Record<string, {
       { title: "Reporting temps réel", desc: "Visibilité totale", icon: Eye },
     ],
     useCases: [
-      { 
-        title: "Scale-up SaaS B2B", 
-        desc: "Générez 50+ RDV qualifiés par mois avec des décideurs",
-        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        points: ["Ciblage des CTO/VP Engineering", "Scripts personnalisés", "Intégration HubSpot"],
+      {
+        title: "Qualification & scoring de leads entrants",
+        desc: "Tri, qualification et enrichissement des leads (formulaires, demandes démo, inbound). Objectif: accélérer la prise en charge commerciale et augmenter le taux de conversion.",
+        image: "https://cdn.prod.website-files.com/619c916dd7a3fa284adc0b27/61ba4b4e3dfea030df9c7024_sales-pipeline-CRM-SPOTIO.jpeg",
+        points: [
+          "Qualification (BANT/ ICP/ besoins) + routing vers la bonne équipe",
+          "Enrichissement (firmographics, contacts) + normalisation CRM",
+          "Relances & prise de RDV avec cadences standardisées"
+        ],
         cta: "Voir le cas client"
       },
-      { 
-        title: "Lancement nouveau marché", 
-        desc: "Structurez votre prospection sur un nouveau territoire",
-        image: "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        points: ["Équipe locale dédiée", "Adaptation culturelle", "Reporting hebdomadaire"],
+      {
+        title: "Prospection multicanale & prise de rendez-vous",
+        desc: "Déploiement de séquences emal/ LinkedIn/ téléphone sur des cibles définies avec votre équipe. Objectif: générer des opportunités qualifiées tout en respectant votre image et vos messages.",
+        image: "https://salesdorado.com/wp-content/uploads/2021/04/sales-cadence.png",
+        points: [
+          "Segmentation & listes (ICP, secteurs, signaux) + enrichissement",
+          "Copywriting opérationnel: messages, objections, scripts d'appel",
+          "Prise de RDV + handoff structuré (contexte, pains, next steps)"
+        ],
         cta: "Voir le cas client"
       },
+      {
+        title: "Support commercial & hygiène CRM",
+        desc: "Support aux équipes sales: mise à jour CRM, relances, suivi opportunités et reporting. Objectif: réduire la charge administrative et fiabiliser le pilotage pipeline.",
+        image: "https://blog-gestion-de-projet.com/wp-content/uploads/2025/10/Checklist-pour-transfert-de-projet-2.png",
+        points: [
+          "Mise à jour CRM (stages, champs, activités) + déduplication",
+          "Relances prospects/ no-shows + replanification RDV",
+          "Reporting pipeline: volumes, taux, qualité de données, backlog"
+        ],
+        cta: "Voir le cas client"
+      }
     ],
     ctaText: "Accélérez votre croissance",
   },
   "business-process": {
     icon: Settings,
-    title: "Business Process Operations",
+    title: "Back Office externalisé, structuré et piloté.",
     subtitle: "Structurez vos processus métier",
-    tagline: "Optimisez votre back-office pour gagner en efficacité",
+    tagline: "PulseCX opère vos activités back-office (traitement de dossiers, contrôles, mises à jour, workflows) avec des équipes dédiées, des process documentés et un pilotage rigoureux pour sécuriser délais, qualité et continuité.",
     description: "Nous prenons en charge vos processus back-office avec rigueur et transparence : traitement de données, CRM, support administratif — tout est structuré et piloté.",
     features: [
       { title: "Back-office opérationnel", desc: "Gestion administrative externalisée", icon: Settings },
@@ -154,28 +192,47 @@ const serviceData: Record<string, {
       { title: "Scalabilité", desc: "Adaptation aux volumes", icon: TrendingUp },
     ],
     useCases: [
-      { 
-        title: "Grands volumes de données", 
-        desc: "Traitez 10 000+ fiches produits par mois",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        points: ["Précision 99.5%", "Double validation", "Intégration ERP"],
+      {
+        title: "Traitement de dossiers & vérifications",
+        desc: "Gestion de dossiers entrants avec contrôles de complétude, conformité et relances. Objectif: réduire les délais, limiter les erreurs et garantir une traçabilité complète.",
+        image: "https://media.licdn.com/dms/image/v2/D4E12AQE9G3NLg3HolQ/article-inline_image-shrink_400_744/article-inline_image-shrink_400_744/0/1683016504033?e=2147483647&v=beta&t=2dIi0jWIUVntDLA4bCn2BrJGjJyICv24-iPAs8ZUgYs",
+        points: [
+          "Vérification pièces/ champs obligatoires + validation",
+          "Relances structurées (email/ téléphone) + suivi statut",
+          "Journalisation: qui a fait quoi, quand, et pourquoi"
+        ],
         cta: "Voir le cas client"
       },
-      { 
-        title: "Transformation digitale", 
-        desc: "Optimisez vos processus administratifs",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        points: ["Digitalisation des processus", "Réduction 40% délais", "Formation des équipes"],
+      {
+        title: "Backlog & traitement de demandes récurrentes",
+        desc: "Traitement quotidien de demandes répétitives (mises à jour, corrections, opérations standardisées). Objectif: stabiliser la qualité et absorber les pics de volume.",
+        image: "https://res.cloudinary.com/monday-blogs/fl_lossy,f_auto,q_auto/wp-blog/2024/07/Dev-exemple-tableau-planification-sprints-story-points-monday-dev.jpg",
+        points: [
+          "Gestion de queues (tickets/ formulaires/ emails)",
+          "Règles de priorisation + escalades structurées",
+          "Contrôles qualité + réduction du rework"
+        ],
         cta: "Voir le cas client"
       },
+      {
+        title: "Saisie, enrichissement & rapprochements",
+        desc: "Mise à jour et fiabilisation de données (CRM/ERP) avec règles de contrôle. Objectif: améliorer la qualité de donnée et la fluidité des processus en aval.",
+        image: "https://www.qalyptus.com/blog/wp-content/uploads/2021/02/Qalyptus-Data-Quality-Dashboard.png",
+        points: [
+          "Saisie / mise à jour de fiches + normalisation",
+          "Enrichissement (sources, compléments, dédoublonnage)",
+          "Rapprochements simples + alertes d’anomalies"
+        ],
+        cta: "Voir le cas client"
+      }
     ],
     ctaText: "Optimisez vos processus",
   },
   "digital-ai": {
     icon: Cpu,
-    title: "Digital & AI-Enhanced Support",
+    title: "Data & AI au service de vos opérations",
     subtitle: "L'IA comme levier, pas comme promesse",
-    tagline: "Augmentez vos équipes avec la technologie",
+    tagline: "PulseCX met en place des flux data fiables, des automatisations et des briques IA pragmatiques pour réduire le manuel, améliorer la qualité et donner de la visibilité - sans alourdir votre stack.",
     description: "Nous intégrons intelligemment les technologies d'automatisation et d'IA pour augmenter l'efficacité de vos opérations — sans surpromesse, avec des résultats mesurables.",
     features: [
       { title: "Automatisation RPA", desc: "Tâches répétitives automatisées", icon: Zap },
@@ -202,20 +259,41 @@ const serviceData: Record<string, {
       { title: "Approche pragmatique", desc: "IA utile, pas de buzzword", icon: Target },
     ],
     useCases: [
-      { 
-        title: "Support client volumineux", 
-        desc: "Automatisez 40% des demandes avec un chatbot supervisé",
-        image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        points: ["Réduction 30% du temps de traitement", "Supervision humaine", "Escalade intelligente"],
+      {
+        title: "Consolidation & fiabilisation des données",
+        desc: "Centralisation de vos sources (support, sales, back-office) et mise en place de règles de qualité. Objectif : une donnée exploitable pour piloter l’opération au quotidien.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ4-nvoOj3xnEQ63ccncGvjPdAQJ8pxaewVA&s",
+        points: [
+          "Extraction multi-sources (CRM, ticketing, téléphonie, spreadsheets)",
+          "Normalisation, déduplication, contrôles qualité & historisation",
+          "Alerting sur anomalies : volumes, délais, taux d’erreur"
+        ],
         cta: "Voir le cas client"
       },
-      { 
-        title: "Contrôle qualité automatisé", 
-        desc: "Analysez 100% de vos interactions clients",
-        image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        points: ["Détection des anomalies", "Scoring automatique", "Plans d'action ciblés"],
+      {
+        title: "Automatisation de workflows opérationnels",
+        desc: "Réduction des tâches manuelles répétitives par automatisation (règles, RPA léger, intégrations). Objectif : augmenter la productivité et réduire les erreurs.",
+        image: "https://www.jitterbit.com/wp-content/uploads/blog-workflowAutomation-featured-1560x740-copy-1.jpg",
+        points: [
+          "Création/mise à jour d’objets CRM & tickets automatiquement",
+          "Routage, tags, priorisation, relances et notifications",
+          "Contrôles conformité + génération de rapports récurrents"
+
+        ],
         cta: "Voir le cas client"
       },
+      {
+        title: "Assistants IA pour qualité & productivité",
+        desc: "Briques IA “pragmatiques” : aide à la rédaction, synthèse, classification, QA assistée. Objectif : accélérer le traitement tout en sécurisant la qualité.",
+        image: "https://www.evaluagent.com/wp-content/uploads/2023/02/Evalu-score-alt.png",
+        points: [
+          "Résumé de conversations, catégorisation, détection d’intention",
+          "Suggestions de réponses + conformité au tone of voice",
+          "Contrôle qualité assisté : checks, flags, scoring"
+
+        ],
+        cta: "Voir le cas client"
+      }
     ],
     ctaText: "Augmentez vos équipes",
   },
@@ -238,22 +316,115 @@ const ServicePage = () => {
 
   const Icon = data.icon;
 
+  // Récupérer les autres services pour le bloc "Voir aussi"
+  const otherServices = Object.entries(serviceData).filter(([key]) => key !== slug);
+
+  // Données des outils d'intégration
+  const tools = [
+    { name: "Zendesk", logo: "https://cdn.worldvectorlogo.com/logos/zendesk.svg" },
+    { name: "HubSpot", logo: "https://cdn.worldvectorlogo.com/logos/hubspot-1.svg" },
+    { name: "Intercom", logo: "https://cdn.worldvectorlogo.com/logos/intercom-1.svg" },
+    { name: "Salesforce", logo: "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" },
+    { name: "Slack", logo: "https://cdn.worldvectorlogo.com/logos/slack-2.svg" },
+    { name: "Microsoft Teams", logo: "https://cdn.worldvectorlogo.com/logos/microsoft-teams-1.svg" }
+  ];
+
+  // Mapping des titres et descriptions pour chaque service
+  const serviceTitleMap: Record<string, string> = {
+    "customer-experience": "Ce que nous opérons côté support client.",
+    "sales-revenue": "Ce que nous opérons côté génération de leads.",
+    "business-process": "Ce que nous opérons côté back-office.",
+    "digital-ai": "Ce que nous mettons en place côté data & IA.",
+  };
+
+  const serviceDescMap: Record<string, string> = {
+    "customer-experience": "Des périmètres typiques, à adapter selon vos canaux, volumes, outils et process internes.",
+    "sales-revenue": "Des périmètres typiques, à adapter selon votre cible, votre offre, vos canaux et vos outils (CRM / Sales stack).",
+    "business-process": "Des périmètres typiques, à adapter selon vos workflows, outils, volumes et exigences de conformité.",
+    "digital-ai": "Des cas d’usage orientés impact opérationnel, à adapter selon vos données, vos outils et vos contraintes de conformité.",
+  };
+
+  // Mapping des logos d'intégration par service
+  const integrationToolsMap: Record<string, Array<{ name: string; logo: string }>> = {
+    "customer-experience": [
+      { name: "Zendesk", logo: "https://cdn.worldvectorlogo.com/logos/zendesk.svg" },
+      { name: "Intercom", logo: "https://cdn.worldvectorlogo.com/logos/intercom-1.svg" },
+      { name: "Freshdesk", logo: "https://cdn.worldvectorlogo.com/logos/freshdesk.svg" },
+      { name: "HubSpot", logo: "https://cdn.worldvectorlogo.com/logos/hubspot-1.svg" },
+      { name: "Salesforce", logo: "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" },
+      { name: "Slack", logo: "https://cdn.worldvectorlogo.com/logos/slack-2.svg" },
+    ],
+    "sales-revenue": [
+      { name: "HubSpot", logo: "https://cdn.worldvectorlogo.com/logos/hubspot-1.svg" },
+      { name: "Salesforce", logo: "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" },
+      { name: "LinkedIn", logo: "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" },
+      { name: "Apollo", logo: "https://cdn.worldvectorlogo.com/logos/apollo-1.svg" },
+      { name: "Outreach", logo: "https://cdn.worldvectorlogo.com/logos/outreach.svg" },
+      { name: "Slack", logo: "https://cdn.worldvectorlogo.com/logos/slack-2.svg" },
+    ],
+    "business-process": [
+      { name: "HubSpot", logo: "https://cdn.worldvectorlogo.com/logos/hubspot-1.svg" },
+      { name: "Salesforce", logo: "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" },
+      { name: "SAP", logo: "https://cdn.worldvectorlogo.com/logos/sap-2.svg" },
+      { name: "Microsoft", logo: "https://cdn.worldvectorlogo.com/logos/microsoft-2.svg" },
+      { name: "Google Workspace", logo: "https://cdn.worldvectorlogo.com/logos/google-workspace.svg" },
+      { name: "Slack", logo: "https://cdn.worldvectorlogo.com/logos/slack-2.svg" },
+    ],
+    "digital-ai": [
+      { name: "OpenAI", logo: "https://cdn.worldvectorlogo.com/logos/openai-2.svg" },
+      { name: "Zapier", logo: "https://cdn.worldvectorlogo.com/logos/zapier.svg" },
+      { name: "Make", logo: "https://cdn.worldvectorlogo.com/logos/make.svg" },
+      { name: "HubSpot", logo: "https://cdn.worldvectorlogo.com/logos/hubspot-1.svg" },
+      { name: "Salesforce", logo: "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" },
+      { name: "Slack", logo: "https://cdn.worldvectorlogo.com/logos/slack-2.svg" },
+    ],
+  };
+
+  // Mapping des titres pour la section Intégrations
+  const integrationTitleMap: Record<string, string> = {
+    "customer-experience": "Des outils qui s'adaptent à votre stack support",
+    "sales-revenue": "Des outils qui s'adaptent à votre stack commerciale",
+    "business-process": "Des outils qui s'adaptent à votre stack back-office",
+    "digital-ai": "Des outils qui s'adaptent à votre stack data & automation",
+  };
+
+  // Mapping des descriptions pour la section Intégrations
+  const integrationDescMap: Record<string, string> = {
+    "customer-experience": "PulseCX s'intègre parfaitement à vos outils de ticketing, CRM et communication pour une gestion fluide de votre relation client.",
+    "sales-revenue": "PulseCX s'intègre parfaitement à votre CRM, vos outils de prospection et votre stack marketing pour alimenter votre pipeline sans friction.",
+    "business-process": "PulseCX s'intègre parfaitement à vos ERP, vos outils de gestion documentaire et vos workflows métier pour une exécution transparente.",
+    "digital-ai": "PulseCX s'intègre parfaitement à vos APIs, vos bases de données et vos outils d'automatisation pour orchestrer vos process data & IA.",
+  };
+
+  // Mapping des footers pour la section Intégrations
+  const integrationFooterMap: Record<string, string> = {
+    "customer-experience": "Zendesk, Intercom, Freshdesk, HubSpot, Salesforce, Jira, Slack, Google Workspace… Nous cadrons les accès, les workflows et les bonnes pratiques dès la phase de mise en place.",
+    "sales-revenue": "HubSpot, Salesforce, Pipedrive, Apollo, Lemlist, Outreach, Salesloft, LinkedIn Sales Navigator, Aircall, Slack… Nous cadrons les accès, les workflows et les bonnes pratiques dès la phase de mise en place.",
+    "business-process": "HubSpot, Salesforce, SAP, Microsoft, Google Workspace, Slack… Nous cadrons les accès, les workflows et les bonnes pratiques dès la phase de mise en place.",
+    "digital-ai": "OpenAI, Zapier, Make, HubSpot, Salesforce, Slack… Nous cadrons les accès, les workflows et les bonnes pratiques dès la phase de mise en place.",
+  };
+
   return (
     <div className="min-h-screen">
-      {/* Hero - Même style que les autres pages */}
+      {/* Hero avec CTA */}
       <section className="bg-gradient-hero pt-32 pb-24">
         <div className="container mx-auto px-6 ml-0 md:ml-10">
           <AnimatedSection className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-pulse-turquoise/30 bg-pulse-turquoise/10 text-pulse-turquoise text-sm font-medium mb-8">
-              <span className="w-2 h-2 rounded-full bg-pulse-turquoise animate-pulse" />
+              <span className="w-1 h-2 rounded-full bg-pulse-turquoise animate-pulse" />
               {data.subtitle}
             </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
               {data.title}
             </h1>
-            <p className="text-xl text-primary-foreground/70 max-w-2xl">
+            <p className="text-xl text-primary-foreground/70 max-w-2xl mb-8">
               {data.tagline}
             </p>
+            <Link to="/contact">
+              <Button variant="hero" size="lg" className="text-base px-10 py-6">
+                Planifier un échange <ArrowRight className="w-5 h-5 ml-1" />
+              </Button>
+            </Link>
           </AnimatedSection>
         </div>
       </section>
@@ -278,10 +449,65 @@ const ServicePage = () => {
         </div>
       </section>
 
+      {/* Cas d'usage - Style inspiré du design fourni */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <AnimatedSection className="text-center mb-16">
+            <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider">Cas d'usage</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3">
+              {serviceTitleMap[slug || "customer-experience"]}
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto mt-4">
+              {serviceDescMap[slug || "customer-experience"]}
+            </p>
+          </AnimatedSection>
+
+          <div className="space-y-16 max-w-5xl mx-auto">
+            {data.useCases.map((useCase, index) => (
+              <AnimatedSection key={index} delay={index * 200}>
+                <div className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 0 ? '' : 'lg:grid-flow-dense'
+                  }`}>
+                  {/* Image */}
+                  <div className={`relative rounded-2xl overflow-hidden group ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'
+                    }`}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-pulse-turquoise/20 to-pulse-azure/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                    <img
+                      src={useCase.image}
+                      alt={useCase.title}
+                      className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </div>
+
+                  {/* Texte */}
+                  <div className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'
+                    }`}>
+                    <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-4">
+                      {useCase.title}
+                    </h3>
+                    <p className="text-muted-foreground text-md mb-6">
+                      {useCase.desc}
+                    </p>
+
+                    <ul className="space-y-3 mb-8">
+                      {useCase.points.map((point, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-pulse-turquoise flex-shrink-0 mt-0.5" />
+                          <span className="text-foreground text-md">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Description & Features */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-16 items-start ml-0 md:ml-10 mr-0 md:mr-10">
             <AnimatedSection>
               <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider mb-4 block">Présentation</span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -290,7 +516,7 @@ const ServicePage = () => {
               <p className="text-muted-foreground leading-relaxed text-lg mb-8">
                 {data.description}
               </p>
-              
+
               <div className="grid sm:grid-cols-2 gap-4">
                 {data.features.map((f, i) => (
                   <div key={i} className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border hover:shadow-md transition-all">
@@ -363,64 +589,94 @@ const ServicePage = () => {
         </div>
       </section>
 
-      {/* Cas d'usage - Alternance image/texte */}
+      {/* Section Logiciels / Intégrations */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
-          <AnimatedSection className="text-center mb-16">
-            <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider">Cas d'usage</span>
+          <AnimatedSection className="text-center mb-12">
+            <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider">Intégrations</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3">
-              Solutions adaptées à vos besoins
+              {integrationTitleMap[slug || "customer-experience"]}
             </h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              {integrationDescMap[slug || "customer-experience"]}
+            </p>
           </AnimatedSection>
 
-          <div className="space-y-16 max-w-5xl mx-auto">
-            {data.useCases.map((useCase, index) => (
-              <AnimatedSection key={index} delay={index * 200}>
-                <div className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 0 ? '' : 'lg:grid-flow-dense'
-                }`}>
-                  {/* Image */}
-                  <div className={`relative rounded-2xl overflow-hidden group ${
-                    index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'
-                  }`}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-pulse-turquoise/20 to-pulse-azure/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                    <img 
-                      src={useCase.image} 
-                      alt={useCase.title}
-                      className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
+          {/* Bandeau de logos */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Dégradé subtil en arrière-plan */}
+            <div className="absolute inset-0 bg-gradient-to-r from-pulse-turquoise/5 via-pulse-azure/5 to-pulse-turquoise/5 rounded-3xl blur-xl" />
 
-                  {/* Texte */}
-                  <div className={`${
-                    index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'
-                  }`}>
-                    <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-                      {useCase.title}
-                    </h3>
-                    <p className="text-muted-foreground text-lg mb-6">
-                      {useCase.desc}
-                    </p>
-                    
-                    <ul className="space-y-3 mb-8">
-                      {useCase.points.map((point, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-pulse-turquoise flex-shrink-0 mt-0.5" />
-                          <span className="text-foreground">{point}</span>
-                        </li>
-                      ))}
-                    </ul>
+            <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl border border-pulse-turquoise/20 p-8 shadow-xl">
+              {/* Grille de logos - dynamique selon le service */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center justify-items-center">
+                {integrationToolsMap[slug || "customer-experience"].map((tool, index) => (
+                  <AnimatedSection key={tool.name} delay={index * 50}>
+                    <div className="group flex flex-col items-center gap-2 transition-all duration-300 hover:scale-110">
+                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-3 shadow-md group-hover:shadow-pulse-turquoise/20 transition-all duration-300">
+                        <img
+                          src={tool.logo}
+                          alt={tool.name}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <span className="text-xs text-muted-foreground font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                        {tool.name}
+                      </span>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
 
-                    <Link to="/contact">
-                      <Button variant="outline" className="group border-pulse-turquoise text-pulse-turquoise hover:bg-pulse-turquoise hover:text-white">
-                        {useCase.cta}
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
+              {/* Description sous la grille - dynamique selon le service */}
+              <div className="mt-10 text-center border-t border-pulse-turquoise/10 pt-8">
+                <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
+                  {integrationFooterMap[slug || "customer-experience"]}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Voir aussi nos autres services */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <AnimatedSection className="text-center mb-12">
+            <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider">À découvrir</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3">
+              Voir aussi nos autres services
+            </h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              Découvrez l'ensemble de nos solutions d'externalisation pour couvrir tous vos besoins opérationnels.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {otherServices.map(([key, service], index) => {
+              const ServiceIcon = service.icon;
+              const serviceTitle = service.title.split(" ").slice(0, 3).join(" ");
+              return (
+                <AnimatedSection key={key} delay={index * 100}>
+                  <Link to={`/services/${key}`} className="group block">
+                    <div className="relative bg-card rounded-2xl p-6 border border-border hover:border-pulse-turquoise/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pulse-turquoise/10 to-pulse-azure/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <ServiceIcon className="w-6 h-6 text-pulse-turquoise" />
+                      </div>
+                      <h3 className="font-display font-bold text-xl text-foreground mb-2 group-hover:text-pulse-turquoise transition-colors">
+                        {serviceTitle}
+                      </h3>
+                      <p className="text-muted-foreground text-sm line-clamp-2">
+                        {service.tagline}
+                      </p>
+                      <div className="mt-4 flex items-center text-pulse-turquoise text-sm font-medium gap-1 group-hover:gap-2 transition-all">
+                        En savoir plus <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </Link>
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -441,7 +697,7 @@ const ServicePage = () => {
                   Planifier un échange <ArrowRight className="w-5 h-5 ml-1" />
                 </Button>
               </Link>
-              <Link to="/careers">
+              <Link to="/">
                 <Button variant="hero-outline" size="lg" className="text-base px-10 py-6">
                   Découvrir nos offres
                 </Button>

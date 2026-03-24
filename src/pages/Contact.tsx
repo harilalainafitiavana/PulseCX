@@ -9,6 +9,7 @@ const Contact = () => {
     email: "",
     company: "",
     phone: "",
+    service: "",
     message: ""
   });
 
@@ -42,7 +43,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 xl:gap-16">
-              {/* Colonne gauche - Informations */}
+              {/* Colonne gauche - Formulaire */}
               <AnimatedSection delay={200} className="w-full">
                 <div className="max-w-xl mx-auto lg:mx-0 lg:ml-auto">
                   <div className="bg-card rounded-2xl p-6 sm:p-8 border border-border shadow-sm">
@@ -107,6 +108,29 @@ const Contact = () => {
                         </div>
                       </div>
 
+                      {/* NOUVEAU CHAMP - Service concerné */}
+                      <div>
+                        <label className="block text-sm font-medium text-foreground mb-2">
+                          Service concerné <span className="text-pulse-turquoise">*</span>
+                        </label>
+                        <select
+                          value={formData.service}
+                          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                          className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:border-pulse-turquoise focus:ring-1 focus:ring-pulse-turquoise outline-none transition cursor-pointer"
+                          required
+                        >
+                          <option value="">Sélectionnez un service</option>
+                          <option value="customer-support">Customer Support & Expérience Client</option>
+                          <option value="revenue-ops">Revenue Ops & Sales Development</option>
+                          <option value="back-office">Back Office & Processus Métier</option>
+                          <option value="digital-ai">Digital & IA / Automatisation</option>
+                          <option value="not-sure">Je ne sais pas encore</option>
+                        </select>
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Nous adapterons notre réponse à votre besoin.
+                        </p>
+                      </div>
+
                       <div>
                         <label className="block text-sm font-medium text-foreground mb-2">
                           Message <span className="text-pulse-turquoise">*</span>
@@ -139,7 +163,7 @@ const Contact = () => {
                 </div>
               </AnimatedSection>
 
-              {/* Colonne droite - Formulaire */}
+              {/* Colonne droite - Informations */}
               <AnimatedSection className="w-full">
                 <div className="max-w-xl mx-auto lg:mx-0">
                   <h2 className="font-display text-3xl font-bold text-foreground mb-4">
