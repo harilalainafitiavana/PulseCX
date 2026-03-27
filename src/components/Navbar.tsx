@@ -10,7 +10,7 @@ const services = [
   { name: "Customer Support & CX Operations", href: "/services/customer-experience" },
   { name: "Sales Development & Revenue Ops", href: "/services/sales-revenue" },
   { name: "Business Process Operations", href: "/services/business-process" },
-  { name: "Digital & AI-Enhanced Support", href: "/services/digital-ai" },
+  { name: "Digital & Operational Automation", href: "/services/digital-ai" },
 ];
 
 const Navbar = () => {
