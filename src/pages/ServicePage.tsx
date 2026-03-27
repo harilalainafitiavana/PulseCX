@@ -69,7 +69,7 @@ const serviceData: Record<string, {
       {
         title: "Support commande, livraison & SAV",
         desc: "Gestion des demandes clients sur l'ensemble du parcours: avant/ pendant/ après livraison. Objectif: réduire la charge interne tout en maintenant un niveau de qualité constant.",
-        image: "https://portermetrics.com/wp-content/uploads/2025/05/E-commerce-dashboard-1.png",
+        image: "https://github.com/harilalainafitiavana/images-portefolio/blob/main/Support%20commande%20&%20produit.png?raw=true",
         points: [
           "Suivi commande, retours, remboursements",
           "Réclamations & litiges (pièces manquantes, colis endommagé)",
@@ -80,7 +80,7 @@ const serviceData: Record<string, {
       {
         title: "Support utilisateur & support produit",
         desc: "Traitement du support N1/N2 avec tri, qualification et escalade vers les équipes produit/tech. Objectif:accélérer la résolution et fiabiliser la boucle de feedback.",
-        image: "https://cdn.prod.website-files.com/6193d546dfb64eec20323f4a/633f2977a0a8b996890087b2_La%2520force%2520des%2520tags_0.png",
+        image: "https://github.com/harilalainafitiavana/images-portefolio/blob/main/Capture%20d'une%20base%20de%20connaissance%20-%20customer%20support.png?raw=true",
         points: [
           "Gestion tickets (Zendesk/ Intercom/ Jira Service...",
           "Qualification, priorisation, reproduction & escalades",
@@ -91,7 +91,7 @@ const serviceData: Record<string, {
       {
         title: "Support administratif & gestion de dossiers",
         desc: "Traitement de demandes répétitives et workflows de validation. Objectif: améliorer les délais de traitement et réduire la variance qualité.",
-        image: "https://www.openbee.com/wp-content/uploads/2022/03/workflow-circuit-de-validation-de-document.png",
+        image: "https://github.com/harilalainafitiavana/images-portefolio/blob/main/Support%20administratif.png?raw=true",
         points: [
           "Prise en charge emails/ formulaires/ chat + suivi client",
           "Contrôles, complétude, conformité & relances",
