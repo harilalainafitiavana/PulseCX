@@ -5,7 +5,15 @@ import {
   ArrowRight, Headphones, TrendingUp, Settings, Cpu,
   CheckCircle2, Users, Clock, BarChart3, Shield,
   Zap, Target, Globe, Star, Award, Sparkles, Eye,
-  FileText, Database, Calendar
+  FileText, Database, Calendar,
+  Mail,
+  Linkedin,
+  Phone,
+  RefreshCcw,
+  AlertTriangle,
+  ArrowUpRight,
+  BookOpen,
+  MessageSquare
 } from "lucide-react";
 
 const serviceData: Record<string, {
@@ -46,10 +54,10 @@ const serviceData: Record<string, {
       { step: "04", title: "Pilotage", desc: "Mise en place des KPI et dashboards" },
     ],
     stats: [
-      { value: "98%", label: "Satisfaction client", icon: Star },
-      { value: "24/7", label: "Disponibilité", icon: Clock },
-      { value: "-45%", label: "Réduction coûts", icon: BarChart3 },
-      { value: "500+", label: "Agents formés", icon: Users },
+      { value: "X%", label: "Satisfaction client", icon: Star },
+      { value: "X/X", label: "Disponibilité", icon: Clock },
+      { value: "-X%", label: "Réduction coûts", icon: BarChart3 },
+      { value: "X+", label: "Agents formés", icon: Users },
     ],
     benefits: [
       { title: "Réduction des coûts", desc: "Jusqu'à 50% d'économie", icon: TrendingUp },
@@ -92,7 +100,7 @@ const serviceData: Record<string, {
         cta: "Voir le cas client"
       }
     ],
-    ctaText: "Boostez votre expérience client",
+    ctaText: "Booster votre expérience client",
   },
   "sales-revenue": {
     icon: TrendingUp,
@@ -113,10 +121,10 @@ const serviceData: Record<string, {
       { step: "04", title: "Optimisation", desc: "A/B testing et amélioration continue" },
     ],
     stats: [
-      { value: "+40%", label: "Taux de conversion", icon: TrendingUp },
-      { value: "24h", label: "Délai de qualification", icon: Clock },
-      { value: "3x", label: "ROI moyen", icon: Award },
-      { value: "500+", label: "RDV/mois", icon: Users },
+      { value: "+X%", label: "Taux de conversion", icon: TrendingUp },
+      { value: "Xh", label: "Délai de qualification", icon: Clock },
+      { value: "Xx", label: "ROI moyen", icon: Award },
+      { value: "X+", label: "RDV/mois", icon: Users },
     ],
     benefits: [
       { title: "Pipeline structuré", desc: "Processus commercial maîtrisé", icon: BarChart3 },
@@ -159,7 +167,7 @@ const serviceData: Record<string, {
         cta: "Voir le cas client"
       }
     ],
-    ctaText: "Accélérez votre croissance",
+    ctaText: "Accélérer votre croissance",
   },
   "business-process": {
     icon: Settings,
@@ -180,10 +188,10 @@ const serviceData: Record<string, {
       { step: "04", title: "Amélioration", desc: "Optimisation continue" },
     ],
     stats: [
-      { value: "-35%", label: "Temps de traitement", icon: Clock },
-      { value: "99.5%", label: "Précision des données", icon: CheckCircle2 },
-      { value: "24/7", label: "Support disponible", icon: Clock },
-      { value: "500+", label: "Processus documentés", icon: FileText },
+      { value: "-X%", label: "Temps de traitement", icon: Clock },
+      { value: "X%", label: "Précision des données", icon: CheckCircle2 },
+      { value: "X/X", label: "Support disponible", icon: Clock },
+      { value: "X+", label: "Processus documentés", icon: FileText },
     ],
     benefits: [
       { title: "Gain de temps", desc: "Équipe recentrée sur le core business", icon: Zap },
@@ -226,7 +234,7 @@ const serviceData: Record<string, {
         cta: "Voir le cas client"
       }
     ],
-    ctaText: "Optimisez vos processus",
+    ctaText: "Optimiser vos processus",
   },
   "digital-ai": {
     icon: Cpu,
@@ -247,10 +255,10 @@ const serviceData: Record<string, {
       { step: "04", title: "Supervision", desc: "Contrôle humain continu" },
     ],
     stats: [
-      { value: "+30%", label: "Productivité", icon: TrendingUp },
-      { value: "-50%", label: "Tâches automatisées", icon: Zap },
-      { value: "24/7", label: "Disponibilité", icon: Clock },
-      { value: "99%", label: "Précision", icon: Star },
+      { value: "+X%", label: "Productivité", icon: TrendingUp },
+      { value: "-X%", label: "Tâches automatisées", icon: Zap },
+      { value: "X/X", label: "Disponibilité", icon: Clock },
+      { value: "X%", label: "Précision", icon: Star },
     ],
     benefits: [
       { title: "Productivité", desc: "Gains de 20 à 40%", icon: TrendingUp },
@@ -295,9 +303,10 @@ const serviceData: Record<string, {
         cta: "Voir le cas client"
       }
     ],
-    ctaText: "Augmentez vos équipes",
+    ctaText: "Augmenter vos équipes",
   },
 };
+
 
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -398,11 +407,450 @@ const ServicePage = () => {
 
   // Mapping des footers pour la section Intégrations
   const integrationFooterMap: Record<string, string> = {
-    "customer-experience": "Zendesk, Intercom, Freshdesk, HubSpot, Salesforce, Jira, Slack, Google Workspace… Nous cadrons les accès, les workflows et les bonnes pratiques dès la phase de mise en place.",
-    "sales-revenue": "HubSpot, Salesforce, Pipedrive, Apollo, Lemlist, Outreach, Salesloft, LinkedIn Sales Navigator, Aircall, Slack… Nous cadrons les accès, les workflows et les bonnes pratiques dès la phase de mise en place.",
-    "business-process": "HubSpot, Salesforce, SAP, Microsoft, Google Workspace, Slack… Nous cadrons les accès, les workflows et les bonnes pratiques dès la phase de mise en place.",
-    "digital-ai": "OpenAI, Zapier, Make, HubSpot, Salesforce, Slack… Nous cadrons les accès, les workflows et les bonnes pratiques dès la phase de mise en place.",
+    "customer-experience": "Zendesk, Intercom, Freshdesk, HubSpot, Salesforce, Jira, Slack, Google Workspace… Nous intégrons vos outils existants et configurons les workflows pour une gestion support fluide et centralisée.",
+    "sales-revenue": "HubSpot, Salesforce, Pipedrive, Apollo, Lemlist, Outreach, Salesloft, LinkedIn Sales Navigator, Aircall, Slack… Nous synchronisons votre stack commerciale pour un pipeline piloté en temps réel et une qualification sans friction.",
+    "business-process": "HubSpot, Salesforce, SAP, Microsoft, Google Workspace, Slack… Nous connectons vos ERP et outils métier pour automatiser les flux, sécuriser les traitements et garantir la traçabilité.",
+    "digital-ai": "OpenAI, Zapier, Make, HubSpot, Salesforce, Slack… Nous orchestrons vos données et automatisations pour déployer des briques IA pragmatiques, sans alourdir votre stack technique.",
   };
+
+  // Ajoutez ces nouveaux items pour chaque service
+
+  const items = [
+    {
+      icon: <Phone className="w-5 h-5" />,
+      title: "Voix",
+      desc: "Appels entrants & sortants",
+    },
+    {
+      icon: <Mail className="w-5 h-5" />,
+      title: "Email",
+      desc: "Traitement & réponses",
+    },
+    {
+      icon: <MessageSquare className="w-5 h-5" />,
+      title: "Chat",
+      desc: "Live chat & messaging",
+    },
+    {
+      icon: <RefreshCcw className="w-5 h-5" />,
+      title: "SAV / retours",
+      desc: "Litiges & remboursements",
+    },
+    {
+      icon: <BookOpen className="w-5 h-5" />,
+      title: "Base de connaissance",
+      desc: "Création & maintenance",
+    },
+    {
+      icon: <ArrowUpRight className="w-5 h-5" />,
+      title: "Escalades",
+      desc: "Routing & suivi structuré",
+    },
+  ];
+
+  // Pour sales-revenue (lead generation)
+  const leadGenItems = [
+    {
+      icon: <Mail className="w-5 h-5" />,
+      title: "Email",
+      desc: "Séquences outbound",
+    },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      title: "LinkedIn",
+      desc: "Prospection ciblée",
+    },
+    {
+      icon: <Phone className="w-5 h-5" />,
+      title: "Appels",
+      desc: "Cold calling & qualification",
+    },
+    {
+      icon: <Calendar className="w-5 h-5" />,
+      title: "Prise de RDV",
+      desc: "Qualification & handoff",
+    },
+    {
+      icon: <Database className="w-5 h-5" />,
+      title: "Enrichissement",
+      desc: "Firmographics & contacts",
+    },
+    {
+      icon: <RefreshCcw className="w-5 h-5" />,
+      title: "Hygiène CRM",
+      desc: "Mise à jour & déduplication",
+    },
+  ];
+
+  // Pour business-process (back office)
+  const backOfficeItems = [
+    {
+      icon: <FileText className="w-5 h-5" />,
+      title: "Traitement dossiers",
+      desc: "Vérification & validation",
+    },
+    {
+      icon: <CheckCircle2 className="w-5 h-5" />,
+      title: "Contrôles qualité",
+      desc: "Double contrôle & conformité",
+    },
+    {
+      icon: <Clock className="w-5 h-5" />,
+      title: "Gestion backlog",
+      desc: "Priorisation & suivi délais",
+    },
+    {
+      icon: <RefreshCcw className="w-5 h-5" />,
+      title: "Relances & suivi",
+      desc: "Email, téléphone, statuts",
+    },
+    {
+      icon: <Database className="w-5 h-5" />,
+      title: "Saisie & mise à jour",
+      desc: "CRM, ERP, formulaires",
+    },
+    {
+      icon: <AlertTriangle className="w-5 h-5" />,
+      title: "Anomalies & escalades",
+      desc: "Détection & routing",
+    },
+  ];
+
+  // Pour digital-ai (data & AI)
+  const dataAiItems = [
+    {
+      icon: <Database className="w-5 h-5" />,
+      title: "Connecteurs & ETL",
+      desc: "Centralisation multi-sources",
+    },
+    {
+      icon: <CheckCircle2 className="w-5 h-5" />,
+      title: "Qualité data",
+      desc: "Nettoyage & normalisation",
+    },
+    {
+      icon: <BarChart3 className="w-5 h-5" />,
+      title: "Dashboards",
+      desc: "KPI & reporting opérationnel",
+    },
+    {
+      icon: <AlertTriangle className="w-5 h-5" />,
+      title: "Alerting",
+      desc: "Anomalies & seuils automatiques",
+    },
+    {
+      icon: <Zap className="w-5 h-5" />,
+      title: "Automatisations",
+      desc: "Workflows & RPA léger",
+    },
+    {
+      icon: <Cpu className="w-5 h-5" />,
+      title: "AI assist",
+      desc: "QA augmentée & scoring",
+    },
+  ];
+
+  // Dans le composant, avant le return, ajoutez cette logique pour déterminer quel bandeau afficher
+  const getPerimetreItems = (slug: string) => {
+    switch (slug) {
+      case "sales-revenue":
+        return leadGenItems;
+      case "business-process":
+        return backOfficeItems;
+      case "digital-ai":
+        return dataAiItems;
+      default:
+        return items; // items par défaut pour customer-experience
+    }
+  };
+
+  const getPerimetreTitle = (slug: string) => {
+    switch (slug) {
+      case "sales-revenue":
+        return "Ce que nous prenons en charge";
+      case "business-process":
+        return "Ce que nous prenons en charge";
+      case "digital-ai":
+        return "Ce que nous mettons en place";
+      default:
+        return "Ce que nous prenons en charge";
+    }
+  };
+
+  const getPerimetreDesc = (slug: string) => {
+    switch (slug) {
+      case "sales-revenue":
+        return "Canaux et activités fréquemment opérés · à ajuster selon votre stack et vos process";
+      case "business-process":
+        return "Activités fréquemment opérées · à ajuster selon vos workflows et exigences de conformité";
+      case "digital-ai":
+        return "Briques data & IA fréquemment déployées · à adapter selon vos outils et contraintes";
+      default:
+        return "Canaux et tâches fréquemment opérés · à ajuster selon vos outils et process";
+    }
+  };
+
+  const getPerimetreFooter = (slug: string) => {
+    switch (slug) {
+      case "sales-revenue":
+        return "Périmètre type · adapté selon votre stack CRM et vos process commerciaux";
+      case "business-process":
+        return "Périmètre type · adapté selon vos workflows, outils et volumes";
+      case "digital-ai":
+        return "Périmètre type · adapté selon vos données, vos outils et vos cas d'usage prioritaires";
+      default:
+        return "Périmètre type · adapté selon vos contraintes, outils et volumes";
+    }
+  };
+
+  const perimetreItems = getPerimetreItems(slug);
+  const perimetreTitle = getPerimetreTitle(slug);
+  const perimetreDesc = getPerimetreDesc(slug);
+  const perimetreFooter = getPerimetreFooter(slug);
+
+  // Mapping pour la section Pourquoi PulseCX
+  const whyPulseCXMap: Record<string, {
+    title: string;
+    description: string;
+    cards: Array<{
+      icon: any;
+      miniTitle: string;      // Titre en majuscule (ex: "Visibilité totale")
+      mainTitle: string;      // Phrase principale en gras (ex: "Vous savez ce qui se passe — chaque semaine, pas en fin de mois.")
+      description: string;
+      badges: Array<{ text: string; icon?: any }>;
+    }>;
+    leftCard: {
+      miniTitle: string;      // Titre en majuscule
+      mainTitle: string;      // Phrase principale en gras
+      description: string;
+      points: string[];
+    };
+    rightCard: {
+      mainTitle: string;      // Phrase principale (ex: "Next step")
+      description: string;
+      buttons: Array<{ text: string; link: string; variant: string }>;
+    };
+  }> = {
+    "customer-experience": {
+      title: "Un support externalisé avec les mêmes exigences qu'en interne.",
+      description: "Pas de perte de contrôle, pas de qualité qui dérive, pas d'interlocuteur qui change. Ce sont les trois problèmes classiques de l'externalisation — voici comment on les traite structurellement.",
+      cards: [
+        {
+          icon: Users,
+          miniTitle: "Visibilité totale",
+          mainTitle: "Vous savez ce qui se passe — chaque semaine, pas en fin de mois.",
+          description: "Dashboard partagé, reporting hebdomadaire structuré, alertes automatiques sur les écarts. Aucune zone grise entre votre équipe et la nôtre.",
+          badges: [
+            { text: "KPI temps réel", icon: BarChart3 },
+            { text: "Reporting hebdo", icon: Clock }
+          ]
+        },
+        {
+          icon: CheckCircle2,
+          miniTitle: "Qualité stable",
+          mainTitle: "La qualité ne dépend pas d'un agent — elle est auditée et documentée.",
+          description: "Standards QA formalisés, calibrations régulières, formation continue. Chaque écart est détecté et traité avant d'impacter votre client final.",
+          badges: [
+            { text: "QA continue", icon: CheckCircle2 },
+            { text: "Plans correctifs", icon: Shield }
+          ]
+        },
+        {
+          icon: BarChart3,
+          miniTitle: "Équipe qui dure",
+          mainTitle: "Des agents formés à vos process, qui restent et qui progressent.",
+          description: "Turnover maîtrisé, formation continue, staffing ajusté. La stabilité des équipes construit une performance durable — pas un démarrage suivi d'une dégradation progressive.",
+          badges: [
+            { text: "Équipes dédiées", icon: Users },
+            { text: "Formation continue", icon: BookOpen }
+          ]
+        }
+      ],
+      leftCard: {
+        miniTitle: "La différence PulseCX",
+        mainTitle: "Pas un prestataire qui exécute — un opérateur qui s'engage sur la performance.",
+        description: "Un BPO classique vous livre des agents. PulseCX vous livre un cadre opérationnel complet : gouvernance, pilotage, qualité et amélioration continue. Vous externalisez sans perdre le contrôle.",
+        points: [
+          "Responsable opérationnel dédié — un interlocuteur unique sur toute la durée",
+          "KPI définis avant le déploiement — mesurés dès J+1, pas en fin de trimestre",
+          "Revues hebdomadaires + plan d'action — les opérations s'améliorent dans la durée"
+        ]
+      },
+      rightCard: {
+        mainTitle: "Next step",
+        description: "Parlons de vos opérations support. 30 minutes pour analyser votre périmètre, vos volumes et définir un cadre de pilotage adapté à votre organisation.",
+        buttons: [
+          { text: "Planifier un échange", link: "/contact", variant: "cta" },
+          { text: "Voir les intégrations", link: "/services", variant: "outline" }
+        ]
+      }
+    },
+    "sales-revenue": {
+      title: "Structurer votre prospection avec une équipe commerciale dédiée.",
+      description: "Générer du pipeline de manière fiable ne s'improvise pas. PulseCX déploie une équipe SDR structurée autour de votre ICP, de vos outils et de vos objectifs de conversion.",
+      cards: [
+        {
+          icon: Target,
+          miniTitle: "ICP & ciblage",
+          mainTitle: "Des listes construites sur votre client idéal, pas sur du volume brut.",
+          description: "Définition du profil client idéal, segmentation par secteur et signaux d'achat, enrichissement des contacts. On prospecte qui doit l'être — pas tout le monde.",
+          badges: [
+            { text: "BANT / MEDDIC", icon: CheckCircle2 },
+            { text: "Enrichissement CRM", icon: Database }
+          ]
+        },
+        {
+          icon: Mail,
+          miniTitle: "Scripts & cadences",
+          mainTitle: "Des messages calibrés pour votre marché, pas des templates génériques.",
+          description: "Copywriting opérationnel, séquences multicanales (email, LinkedIn, téléphone), A/B testing continu. Chaque message respecte votre image et vos valeurs.",
+          badges: [
+            { text: "Email", icon: Mail },
+            { text: "LinkedIn", icon: Linkedin },
+            { text: "Appels", icon: Phone }
+          ]
+        },
+        {
+          icon: BarChart3,
+          miniTitle: "Pilotage pipeline",
+          mainTitle: "Conversion, volume, qualité des leads — suivis chaque semaine.",
+          description: "Reporting structuré sur les KPI commerciaux : taux de conversion, délai de qualification, qualité des RDV. Le pipeline est piloté, pas subi.",
+          badges: [
+            { text: "Reporting hebdo", icon: Clock },
+            { text: "Feedback loop", icon: RefreshCcw }
+          ]
+        }
+      ],
+      leftCard: {
+        miniTitle: "Extension de votre force de vente",
+        mainTitle: "Une équipe SDR dédiée qui parle votre marché et respecte vos standards.",
+        description: "PulseCX ne sous-traite pas de la prospection générique. On déploie des SDR/BDR formés à votre secteur, à vos objections et à votre positionnement — avec un handoff structuré vers vos commerciaux.",
+        points: [
+          "Formation à votre marché et vos messages — pas un script générique",
+          "Handoff structuré — contexte, pains, next steps transmis à chaque RDV",
+          "Optimisation continue — A/B test, ajustement des cadences, amélioration du taux de conversion"
+        ]
+      },
+      rightCard: {
+        mainTitle: "Next step",
+        description: "Construisons votre machine commerciale. Nous analysons votre ICP, vos canaux et vos objectifs de pipeline pour définir une stratégie de prospection adaptée.",
+        buttons: [
+          { text: "Planifier un échange", link: "/contact", variant: "cta" },
+          { text: "Voir les intégrations", link: "/services", variant: "outline" }
+        ]
+      }
+    },
+    "business-process": {
+      title: "Un back-office externalisé qui libère vos équipes internes.",
+      description: "Traitement de dossiers, saisie, contrôles, relances — ces opérations consomment du temps et de l'énergie sans créer de valeur directe. PulseCX les prend en charge avec rigueur pour que vos équipes se concentrent sur l'essentiel.",
+      cards: [
+        {
+          icon: Zap,
+          miniTitle: "Charge administrative réduite",
+          mainTitle: "Vos équipes arrêtent de gérer le flux — elles pilotent l'activité.",
+          description: "PulseCX absorbe les tâches répétitives : traitement de formulaires, relances, saisie, contrôles de conformité. Votre équipe interne intervient sur les décisions, pas sur l'exécution.",
+          badges: [
+            { text: "Tâches répétitives", icon: RefreshCcw },
+            { text: "Traitement flux", icon: FileText }
+          ]
+        },
+        {
+          icon: Clock,
+          miniTitle: "Backlog maîtrisé",
+          mainTitle: "Les dossiers en attente ne s'accumulent plus — ils sont traités.",
+          description: "Gestion des queues, règles de priorisation, suivi du backlog en temps réel. Les délais de traitement sont mesurés et pilotés — pas découverts en fin de semaine.",
+          badges: [
+            { text: "Suivi backlog", icon: Clock },
+            { text: "Priorisation", icon: Target }
+          ]
+        },
+        {
+          icon: Database,
+          miniTitle: "Données fiabilisées",
+          mainTitle: "Vos systèmes reflètent la réalité — pas ce qu'on croit avoir saisi.",
+          description: "Normalisation, déduplication, enrichissement et contrôles qualité sur vos données CRM et ERP. Des données propres pour des décisions fiables et une opération qui tourne sans friction.",
+          badges: [
+            { text: "Normalisation CRM", icon: Database },
+            { text: "Déduplication", icon: RefreshCcw }
+          ]
+        }
+      ],
+      leftCard: {
+        miniTitle: "Quand le back-office est bien opéré",
+        mainTitle: "Tout le reste va plus vite — la vente, le support, la prise de décision.",
+        description: "Un back-office mal géré ralentit toute l'organisation : les commerciaux attendent des données propres, le support reçoit des demandes que le back-office aurait dû traiter, la direction pilote sur des chiffres faux. PulseCX résout ça structurellement.",
+        points: [
+          "Cartographie des flux dès le cadrage — on identifie ce qui ralentit avant de déployer",
+          "Process standardisés et documentés — reproductibles, auditables, améliorables",
+          "Pilotage hebdomadaire — délais, qualité, backlog, anomalies détectées et traitées"
+        ]
+      },
+      rightCard: {
+        mainTitle: "Next step",
+        description: "Externalisez votre back-office sans perdre le contrôle. Nous cartographions vos flux, identifions les priorités et définissons un périmètre d'externalisation adapté à votre organisation.",
+        buttons: [
+          { text: "Planifier un échange", link: "/contact", variant: "cta" },
+          { text: "Voir les intégrations", link: "/services", variant: "outline" }
+        ]
+      }
+    },
+    "digital-ai": {
+      title: "Des gains de productivité mesurables — pas des promesses de transformation.",
+      description: "PulseCX déploie des automatisations et des briques IA avec un seul critère : est-ce que ça réduit le manuel, améliore la qualité ou donne de la visibilité ? Si oui, on le mesure. Sinon, on ne le déploie pas.",
+      cards: [
+        {
+          icon: TrendingUp,
+          miniTitle: "Productivité augmentée",
+          mainTitle: "Moins de tâches manuelles — plus de temps sur ce qui crée de la valeur.",
+          description: "Automatisation des workflows récurrents, génération de rapports, routing intelligent et relances automatiques. Les gains de productivité sont mesurés avant et après chaque déploiement.",
+          badges: [
+            { text: "Gains 20-40%", icon: TrendingUp },
+            { text: "Tâches automatisées", icon: Zap }
+          ]
+        },
+        {
+          icon: Shield,
+          miniTitle: "Qualité renforcée",
+          mainTitle: "L'IA détecte ce que l'humain rate à volume — la supervision humaine corrige.",
+          description: "Scoring automatique des interactions, détection d'anomalies en temps réel, flags qualité sur les écarts. La qualité ne dépend plus du volume traité — elle est systématiquement vérifiée.",
+          badges: [
+            { text: "QA assistée IA", icon: Cpu },
+            { text: "Scoring", icon: BarChart3 }
+          ]
+        },
+        {
+          icon: Users,
+          miniTitle: "Supervision humaine maintenue",
+          mainTitle: "L'IA augmente les équipes — elle ne les remplace pas sur les décisions critiques.",
+          description: "Chaque automatisation est supervisée par une équipe opérationnelle. Les décisions qui impactent vos clients ou votre conformité restent humaines. L'IA gère le volume, l'humain gère le jugement.",
+          badges: [
+            { text: "IA + humain", icon: Cpu },
+            { text: "Contrôle continu", icon: CheckCircle2 }
+          ]
+        }
+      ],
+      leftCard: {
+        miniTitle: "L'IA qui se mesure — pas celle qui s'annonce",
+        mainTitle: "Chaque déploiement commence par définir comment on mesure le succès.",
+        description: "Avant de déployer quoi que ce soit, PulseCX définit les métriques de succès : temps de traitement avant/après, taux d'erreur, volume automatisé, gains de productivité. L'impact est visible dès les 90 premiers jours — ou on ajuste.",
+        points: [
+          "Baseline définie avant déploiement — on mesure l'avant pour prouver l'après",
+          "ROI visible dès 3 mois — productivité, qualité, réduction du manuel mesurées",
+          "Itération continue — chaque revue ajuste les automatisations selon les résultats réels"
+        ]
+      },
+      rightCard: {
+        mainTitle: "Next step",
+        description: "Mesurons l'impact data & IA sur vos opérations. Nous identifions vos cas d'usage prioritaires, définissons les métriques de succès et déployons ce qui crée un impact réel.",
+        buttons: [
+          { text: "Planifier un échange", link: "/contact", variant: "cta" },
+          { text: "Voir les intégrations", link: "/services", variant: "outline" }
+        ]
+      }
+    }
+  };
+
+  const whyData = whyPulseCXMap[slug || "customer-experience"];
 
   return (
     <div className="min-h-screen">
@@ -504,87 +952,231 @@ const ServicePage = () => {
         </div>
       </section>
 
-      {/* Description & Features */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-start ml-0 md:ml-10 mr-0 md:mr-10">
-            <AnimatedSection>
-              <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider mb-4 block">Présentation</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-                {data.title}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-8">
-                {data.description}
-              </p>
+      {/* Bandeau périmètre - Dynamique selon le service */}
+      <section className="bg-gradient-to-br from-pulse-azure/5 to-pulse-turquoise/5 py-16 px-4">
+        <div className="max-w-6xl mx-auto">
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                {data.features.map((f, i) => (
-                  <div key={i} className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border hover:shadow-md transition-all">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-pulse-turquoise/10 to-pulse-azure/10 flex items-center justify-center flex-shrink-0">
-                      <f.icon className="w-5 h-5 text-pulse-turquoise" />
-                    </div>
-                    <div>
-                      <h4 className="font-display font-semibold text-foreground">{f.title}</h4>
-                      <p className="text-xs text-muted-foreground">{f.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </AnimatedSection>
+          {/* Header */}
+          <div className="mb-10 text-center">
+            <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider mb-2 block">
+              Périmètre d'intervention
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+              {perimetreTitle}
+            </h2>
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              {perimetreDesc}
+            </p>
+          </div>
 
-            <AnimatedSection delay={200}>
-              <div className="bg-gradient-to-br from-pulse-turquoise/5 to-pulse-azure/5 rounded-3xl p-8 border border-border">
-                <h3 className="font-display text-2xl font-bold text-foreground mb-8 flex items-center gap-2">
-                  <Target className="w-6 h-6 text-pulse-turquoise" />
-                  Notre méthodologie
-                </h3>
-                <div className="space-y-6">
-                  {data.methodology.map((m, i) => (
-                    <div key={i} className="flex items-start gap-4 group">
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-pulse-turquoise to-pulse-azure rounded-full blur-md opacity-0 group-hover:opacity-50 transition-opacity" />
-                        <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-pulse-turquoise to-pulse-azure flex items-center justify-center">
-                          <span className="text-white font-bold">{m.step}</span>
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-display font-bold text-foreground text-lg mb-1">{m.title}</h4>
-                        <p className="text-muted-foreground">{m.desc}</p>
-                      </div>
-                    </div>
-                  ))}
+          {/* Grid 4 colonnes */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            {/* 4 premiers cadres */}
+            {perimetreItems.slice(0, 4).map((item, index) => (
+              <div
+                key={index}
+                className="group flex items-start gap-3 border border-pulse-azure/20 bg-pulse-azure/5 backdrop-blur-sm rounded-xl p-4 hover:border-pulse-azure/40 hover:bg-pulse-azure/10 transition-all duration-300 hover:shadow-lg h-full"
+              >
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-pulse-azure/20 text-pulse-azure flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {item.desc}
+                  </p>
                 </div>
               </div>
-            </AnimatedSection>
+            ))}
+
+            {/* Remplissage des emplacements vides si moins de 4 items */}
+            {perimetreItems.length < 4 && Array.from({ length: 4 - perimetreItems.length }).map((_, idx) => (
+              <div
+                key={`empty-top-${idx}`}
+                className="border border-pulse-azure/20 bg-pulse-azure/5 rounded-xl p-4 opacity-0 pointer-events-none"
+              />
+            ))}
+
+            {/* 5ème cadre - même largeur que les autres (1 colonne) */}
+            {perimetreItems[4] && (
+              <div
+                className="group flex items-start gap-3 border border-pulse-azure/20 bg-pulse-azure/5 backdrop-blur-sm rounded-xl p-4 hover:border-pulse-azure/40 hover:bg-pulse-azure/10 transition-all duration-300 hover:shadow-lg h-full"
+              >
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-pulse-azure/20 text-pulse-azure flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  {perimetreItems[4].icon}
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground">
+                    {perimetreItems[4].title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {perimetreItems[4].desc}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Espace vide après le 5ème cadre si besoin */}
+            {perimetreItems[4] && !perimetreItems[5] && (
+              <div className="border border-pulse-azure/20 bg-pulse-azure/5 rounded-xl p-4 opacity-0 pointer-events-none" />
+            )}
+
+            {/* 6ème cadre - même largeur que les autres (1 colonne) */}
+            {perimetreItems[5] && (
+              <div
+                className="group flex items-start gap-3 border border-pulse-azure/20 bg-pulse-azure/5 backdrop-blur-sm rounded-xl p-4 hover:border-pulse-azure/40 hover:bg-pulse-azure/10 transition-all duration-300 hover:shadow-lg h-full"
+              >
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-pulse-azure/20 text-pulse-azure flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  {perimetreItems[5].icon}
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground">
+                    {perimetreItems[5].title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {perimetreItems[5].desc}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Espaces vides pour maintenir la grille complète après le 6ème cadre */}
+            {perimetreItems[5] && (
+              <>
+                <div className="border border-pulse-azure/20 bg-pulse-azure/5 rounded-xl p-4 opacity-0 pointer-events-none" />
+                <div className="border border-pulse-azure/20 bg-pulse-azure/5 rounded-xl p-4 opacity-0 pointer-events-none" />
+              </>
+            )}
+
+            {/* Si seulement 5 items, un espace vide après le 5ème */}
+            {perimetreItems[4] && !perimetreItems[5] && (
+              <>
+                <div className="border border-pulse-azure/20 bg-pulse-azure/5 rounded-xl p-4 opacity-0 pointer-events-none" />
+                <div className="border border-pulse-azure/20 bg-pulse-azure/5 rounded-xl p-4 opacity-0 pointer-events-none" />
+              </>
+            )}
+
+            {/* Si moins de 5 items, pas de cadre supplémentaire */}
           </div>
+
+          {/* Footer note - Dynamique selon le service */}
+          <div className="text-center pt-8">
+            <p className="text-xs text-muted-foreground italic border-t border-pulse-azure/20 inline-block pt-4 px-6">
+              {perimetreFooter}
+            </p>
+          </div>
+
         </div>
       </section>
 
-      {/* Bénéfices */}
-      <section className="py-24 bg-gradient-to-tr from-pulse-azure/5 to-pulse-turquoise/5">
+      {/* Section Pourquoi PulseCX */}
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <AnimatedSection className="text-center mb-16">
-            <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider">Avantages</span>
+            <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider">Pourquoi PulseCX</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3">
-              Pourquoi choisir cette solution ?
+              {whyData.title}
             </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
+              {whyData.description}
+            </p>
           </AnimatedSection>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {data.benefits.map((benefit, i) => (
-              <AnimatedSection key={i} delay={i * 100}>
-                <div className="group relative h-full">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-pulse-turquoise to-pulse-azure rounded-2xl opacity-0 group-hover:opacity-30 blur transition-all duration-500" />
-                  <div className="relative bg-card rounded-2xl p-6 border border-border group-hover:border-transparent transition-all duration-300 h-full text-center">
-                    <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-pulse-turquoise/10 to-pulse-azure/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                      <benefit.icon className="w-7 h-7 text-pulse-turquoise" />
-                    </div>
-                    <h3 className="font-display font-bold text-foreground mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-muted-foreground">{benefit.desc}</p>
+          {/* 3 cards en haut */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 ml-0 md:ml-10 mr-0 md:mr-10">
+            {whyData.cards.map((card, idx) => (
+              <AnimatedSection key={idx} delay={idx * 100}>
+                <div className="bg-card rounded-2xl p-6 border border-border hover:border-pulse-turquoise/30 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pulse-turquoise/10 to-pulse-azure/10 flex items-center justify-center mb-4">
+                    <card.icon className="w-6 h-6 text-pulse-turquoise" />
+                  </div>
+                  {/* Mini titre en majuscule - gris et petit */}
+                  <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                    {card.miniTitle}
+                  </div>
+                  {/* Titre principal en gras */}
+                  <h3 className="font-display font-bold text-xl text-foreground mb-3">
+                    {card.mainTitle}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    {card.description}
+                  </p>
+                  <div className="mt-auto flex flex-wrap gap-2">
+                    {card.badges.map((badge, badgeIdx) => (
+                      <span key={badgeIdx} className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-pulse-azure/10 text-pulse-azure text-xs font-medium">
+                        {badge.icon && <badge.icon className="w-3 h-3" />}
+                        {badge.text}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </AnimatedSection>
             ))}
+          </div>
+
+          {/* 2 cards en bas - gauche plus large que droite */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 ml-0 md:ml-10 mr-0 md:mr-10">
+            {/* Card gauche - large (2 colonnes) */}
+            <AnimatedSection delay={300} className="lg:col-span-2">
+              <div className="relative overflow-hidden rounded-2xl p-8 bg-gradient-hero text-primary-foreground h-full">
+                <div className="absolute inset-0">
+                  <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-pulse-turquoise/20 rounded-full blur-[80px]" />
+                  <div className="absolute bottom-0 right-0 w-[200px] h-[200px] bg-pulse-azure/20 rounded-full blur-[60px]" />
+                </div>
+                <div className="relative z-10">
+                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-4">
+                    <TrendingUp className="w-6 h-6 text-white" />
+                  </div>
+                  {/* Mini titre en majuscule */}
+                  <div className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-2">
+                    {whyData.leftCard.miniTitle}
+                  </div>
+                  {/* Titre principal en gras */}
+                  <h3 className="font-display font-bold text-2xl text-white mb-4">
+                    {whyData.leftCard.mainTitle}
+                  </h3>
+                  <p className="text-white/80 text-sm leading-relaxed mb-4">
+                    {whyData.leftCard.description}
+                  </p>
+                  <div className="flex flex-col gap-3 mt-4">
+                    {whyData.leftCard.points.map((point, pointIdx) => (
+                      <div key={pointIdx} className="flex items-center gap-2 text-white/80 text-sm">
+                        <CheckCircle2 className="w-4 h-4 text-pulse-turquoise flex-shrink-0" />
+                        <span>{point}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Card droite - petite (1 colonne) */}
+            <AnimatedSection delay={400} className="lg:col-span-1">
+              <div className="relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-pulse-turquoise/10 to-pulse-turquoise/5 border border-pulse-turquoise/20 h-full flex flex-col justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-pulse-turquoise/5 to-transparent" />
+                <div className="relative z-10">
+                  <h3 className="font-display font-bold text-2xl text-foreground mb-4">
+                    {whyData.rightCard.mainTitle}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                    {whyData.rightCard.description}
+                  </p>
+                  <div className="flex flex-col gap-3">
+                    {whyData.rightCard.buttons.map((btn, btnIdx) => (
+                      <Link key={btnIdx} to={btn.link}>
+                        <Button variant={btn.variant as any} className="w-full group">
+                          {btn.text}
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -655,7 +1247,7 @@ const ServicePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {otherServices.map(([key, service], index) => {
               const ServiceIcon = service.icon;
-              const serviceTitle = service.title.split(" ").slice(0, 3).join(" ");
+              const serviceTitle = service.title.split(" ").slice(0, 3).join(" ").replace(/[,.]$/, '');
               return (
                 <AnimatedSection key={key} delay={index * 100}>
                   <Link to={`/services/${key}`} className="group block">

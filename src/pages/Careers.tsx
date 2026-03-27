@@ -1,8 +1,8 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { 
-  ArrowRight, MapPin, Clock, Send, Briefcase, 
+import {
+  ArrowRight, MapPin, Clock, Send, Briefcase,
   TrendingUp, Users, Award, Heart, Star, ChevronDown,
   Mail, Phone, FileText, CheckCircle2, Sparkles,
   Calendar, Coffee, Gift, Zap, Globe, Shield
@@ -11,49 +11,49 @@ import { useState, useRef } from "react";
 
 // Données enrichies
 const stats = [
-  { value: "200+", label: "Collaborateurs", icon: Users },
-  { value: "98%", label: "Satisfaction", icon: Star },
-  { value: "10+", label: "Nationalités", icon: Award },
-  { value: "100%", label: "Formation interne", icon: TrendingUp },
+  { value: "X+", label: "Collaborateurs", icon: Users },
+  { value: "X%", label: "Satisfaction", icon: Star },
+  { value: "X+", label: "Nationalités", icon: Award },
+  { value: "X%", label: "Formation interne", icon: TrendingUp },
 ];
 
 const jobs = [
-  { 
-    title: "Conseiller Client Multilingue", 
-    type: "Temps plein", 
+  {
+    title: "Conseiller Client Multilingue",
+    type: "Temps plein",
     location: "Antananarivo",
     department: "Customer Experience",
-    posted: "Il y a 3 jours",
+    posted: "date fixe",
     description: "Vous assurez un support client exceptionnel sur nos canaux multiples (email, chat, téléphone).",
     requirements: ["Anglais courant", "Excellente communication", "Résolution de problèmes"],
     icon: Users
   },
-  { 
-    title: "Team Leader CX", 
-    type: "Temps plein", 
+  {
+    title: "Team Leader CX",
+    type: "Temps plein",
     location: "Antananarivo",
     department: "Management",
-    posted: "Il y a 5 jours",
+    posted: "date fixe",
     description: "Vous pilotez une équipe de conseillers et garantissez l'atteinte des objectifs de performance.",
     requirements: ["Expérience en management", "Leadership", "Analyse de données"],
     icon: Award
   },
-  { 
-    title: "Chargé de Qualité (QA)", 
-    type: "Temps plein", 
+  {
+    title: "Chargé de Qualité (QA)",
+    type: "Temps plein",
     location: "Antananarivo",
     department: "Qualité",
-    posted: "Il y a 1 semaine",
+    posted: "date fixe",
     description: "Vous analysez la qualité des interactions et mettez en place des plans d'amélioration.",
     requirements: ["Souci du détail", "Méthodologie", "Reporting"],
     icon: Shield
   },
-  { 
-    title: "Business Development Representative", 
-    type: "Temps plein", 
+  {
+    title: "Business Development Representative",
+    type: "Temps plein",
     location: "Antananarivo",
     department: "Sales",
-    posted: "Il y a 2 jours",
+    posted: "date fixe",
     description: "Vous développez le portefeuille clients et qualifiez les opportunités commerciales.",
     requirements: ["Prospection", "Négociation", "Relation client"],
     icon: TrendingUp
@@ -81,7 +81,7 @@ const Careers = () => {
     message: "",
     cv: null
   });
-  
+
   const formSectionRef = useRef(null);
 
   // Scroll vers le formulaire quand on clique sur Postuler
@@ -116,7 +116,7 @@ const Careers = () => {
           <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-pulse-turquoise blur-3xl animate-pulse" />
           <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-pulse-azure blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
         </div>
-        
+
         {/* Particules animées */}
         <div className="absolute inset-0">
           {[...Array(20)].map((_, i) => (
@@ -147,7 +147,7 @@ const Careers = () => {
               <p className="text-lg md:text-xl text-primary-foreground/70 leading-relaxed mb-10 max-w-2xl">
                 PulseCX offre un cadre structuré, des opportunités d'évolution accélérées et une culture de la performance où chaque talent peut s'épanouir.
               </p>
-              
+
               {/* Stats animées */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {stats.map((stat, i) => (
@@ -216,13 +216,13 @@ const Careers = () => {
                 <AnimatedSection key={job.title} delay={i * 100}>
                   <div className="group relative">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-pulse-turquoise to-pulse-azure rounded-2xl opacity-0 group-hover:opacity-30 blur transition-all duration-500" />
-                    
+
                     <div className="relative bg-card rounded-2xl p-6 border border-border group-hover:border-transparent transition-all duration-300">
                       <div className="flex items-start gap-4">
                         <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-pulse-turquoise to-pulse-azure flex items-center justify-center flex-shrink-0`}>
                           <job.icon className="w-6 h-6 text-white" />
                         </div>
-                        
+
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
                             <span className="text-xs font-semibold text-pulse-turquoise bg-pulse-turquoise/10 px-3 py-1 rounded-full">
@@ -230,11 +230,11 @@ const Careers = () => {
                             </span>
                             <span className="text-xs text-muted-foreground">{job.posted}</span>
                           </div>
-                          
+
                           <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-pulse-turquoise transition-colors">
                             {job.title}
                           </h3>
-                          
+
                           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-3">
                             <span className="flex items-center gap-1">
                               <Clock className="w-4 h-4 text-pulse-turquoise" /> {job.type}
@@ -243,9 +243,9 @@ const Careers = () => {
                               <MapPin className="w-4 h-4 text-pulse-turquoise" /> {job.location}
                             </span>
                           </div>
-                          
-                          <Button 
-                            variant="cta" 
+
+                          <Button
+                            variant="cta"
                             size="sm"
                             onClick={() => handleApply(job.title)}
                             className="group/btn mt-2"
@@ -264,8 +264,8 @@ const Careers = () => {
               <AnimatedSection delay={500}>
                 <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border text-center mt-6">
                   <p className="text-foreground mb-4">Vous ne trouvez pas le poste idéal ?</p>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="lg"
                     onClick={() => handleApply("Candidature spontanée")}
                     className="border-pulse-turquoise text-pulse-turquoise hover:bg-pulse-turquoise hover:text-white w-full"
@@ -298,7 +298,7 @@ const Careers = () => {
 
                 {/* Image d'ambiance */}
                 <div className="relative rounded-xl overflow-hidden mb-6 h-48 group">
-                  <img 
+                  <img
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="Équipe PulseCX"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -323,7 +323,7 @@ const Careers = () => {
       </section>
 
       {/* SECTION FORMULAIRE DE CANDIDATURE - Toujours visible en bas */}
-      <section 
+      <section
         ref={formSectionRef}
         id="candidature-form"
         className="py-16 bg-gradient-to-r from-pulse-turquoise/10 to-pulse-azure/10 scroll-mt-20"
@@ -345,67 +345,67 @@ const Careers = () => {
               <div className="bg-card rounded-2xl shadow-card-hover p-8 border border-border relative overflow-hidden">
                 {/* Éléments décoratifs */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-pulse-turquoise/5 rounded-full blur-3xl" />
-                
+
                 <div className="relative z-10">
                   <h4 className="font-display text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
                     <FileText className="w-5 h-5 text-pulse-turquoise" />
                     Vos informations
                   </h4>
-                  
+
                   <form className="space-y-5" onSubmit={handleSubmit}>
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Nom complet <span className="text-pulse-turquoise">*</span>
                       </label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         value={formData.fullName}
-                        onChange={(e) => setFormData({...formData, fullName: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         placeholder="Jean Dupont"
                         className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:ring-2 focus:ring-pulse-turquoise/20 focus:border-pulse-turquoise outline-none transition-all"
-                        required 
+                        required
                       />
                     </div>
-                    
+
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-foreground mb-2">
                           Email <span className="text-pulse-turquoise">*</span>
                         </label>
-                        <input 
-                          type="email" 
+                        <input
+                          type="email"
                           value={formData.email}
-                          onChange={(e) => setFormData({...formData, email: e.target.value})}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="jean.dupont@email.com"
                           className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:ring-2 focus:ring-pulse-turquoise/20 focus:border-pulse-turquoise outline-none transition-all"
-                          required 
+                          required
                         />
                       </div>
-                      
+
                       <div>
                         <label className="block text-sm font-medium text-foreground mb-2">
                           Téléphone
                         </label>
-                        <input 
-                          type="tel" 
+                        <input
+                          type="tel"
                           value={formData.phone}
-                          onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="+261 34 00 000 00"
                           className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:ring-2 focus:ring-pulse-turquoise/20 focus:border-pulse-turquoise outline-none transition-all"
                         />
                       </div>
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         CV (PDF, DOC) <span className="text-pulse-turquoise">*</span>
                       </label>
                       <div className="border-2 border-dashed border-border rounded-xl p-6 text-center hover:border-pulse-turquoise/30 transition-colors">
-                        <input 
-                          type="file" 
+                        <input
+                          type="file"
                           accept=".pdf,.doc,.docx"
-                          onChange={(e) => setFormData({...formData, cv: e.target.files[0]})}
-                          className="hidden" 
+                          onChange={(e) => setFormData({ ...formData, cv: e.target.files[0] })}
+                          className="hidden"
                           id="cv-upload"
                           required
                         />
@@ -416,24 +416,24 @@ const Careers = () => {
                         </label>
                       </div>
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Message (optionnel)
                       </label>
-                      <textarea 
+                      <textarea
                         rows={3}
                         value={formData.message}
-                        onChange={(e) => setFormData({...formData, message: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Parlez-nous de votre motivation..."
                         className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:ring-2 focus:ring-pulse-turquoise/20 focus:border-pulse-turquoise outline-none transition-all resize-none"
                       />
                     </div>
-                    
+
                     <div className="flex gap-4 pt-2">
-                      <Button 
-                        type="submit" 
-                        variant="cta" 
+                      <Button
+                        type="submit"
+                        variant="cta"
                         size="lg"
                         className="flex-1 group"
                       >
@@ -449,13 +449,13 @@ const Careers = () => {
               <div className="bg-card rounded-2xl shadow-card-hover p-8 border border-border relative overflow-hidden">
                 {/* Éléments décoratifs */}
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-pulse-azure/5 rounded-full blur-3xl" />
-                
+
                 <div className="relative z-10">
                   <h4 className="font-display text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
                     <Award className="w-5 h-5 text-pulse-turquoise" />
                     Pourquoi postuler chez PulseCX ?
                   </h4>
-                  
+
                   {/* Avantages en deux colonnes */}
                   <div className="grid grid-cols-2 gap-3 mb-6">
                     {benefits.map((benefit, i) => (
@@ -468,7 +468,7 @@ const Careers = () => {
 
                   {/* Image inspirante */}
                   <div className="relative rounded-xl overflow-hidden mb-6 h-36 group">
-                    <img 
+                    <img
                       src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                       alt="Team meeting"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -487,8 +487,8 @@ const Careers = () => {
                     <p className="text-xs text-muted-foreground mb-3">
                       Notre équipe RH est à votre écoute
                     </p>
-                    <a 
-                      href="mailto:recrutement@pulsecx.com" 
+                    <a
+                      href="mailto:recrutement@pulsecx.com"
                       className="text-sm text-pulse-turquoise hover:underline flex items-center gap-1"
                     >
                       recrutement@pulsecx.com

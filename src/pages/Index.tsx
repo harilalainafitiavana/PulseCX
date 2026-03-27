@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
 import CountUp from "@/components/CountUp";
-import { Headphones, TrendingUp, Settings, Cpu, ShieldCheck, BarChart3, Users, Eye, Star, ArrowRight, CheckCircle2, Award, Clock, Zap, Target, Sparkles } from "lucide-react";
+import { Headphones, TrendingUp, Settings, Cpu, ShieldCheck, BarChart3, Users, Eye, Star, ArrowRight, CheckCircle2, Award, Clock, Zap, Target, Sparkles, Shield, X } from "lucide-react";
 // import partnersBanner from "@/assets/marques_partenaire.png";
 import heroIllustration from "@/assets/hero-illustration.png";
 import avisAlibaba from "@/assets/avis_alibaba.png";
@@ -264,7 +264,7 @@ const Index = () => {
               </AnimatedSection>
               <AnimatedSection delay={200}>
                 <p className="text-lg md:text-xl text-primary-foreground/70 leading-relaxed mb-10 max-w-2xl">
-                  PulseCX est déploie et pilote des équipes externalisées avec gouvernance opérationnelle, KPI et amélioration continue.
+                  PulseCX déploie et pilote des équipes externalisées avec gouvernance opérationnelle, KPI et amélioration continue.
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={300}>
@@ -307,7 +307,7 @@ const Index = () => {
           <AnimatedSection className="text-center mb-16">
             <span className="text-lg font-semibold text-pulse-azure uppercase tracking-wider">Partenaires</span>
             <h2 className="font-display text-2xl md:text-3xl font-bold text-black mt-3">
-              Des entreprises qui nous confient leurs opérations
+              Ils nous font confiance pour opérer
             </h2>
           </AnimatedSection>
 
@@ -650,36 +650,58 @@ const Index = () => {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-5 ml-0 md:ml-10 mr-0 md:mr-10">
-            {/* Grande carte - Socle de pilotage */}
-            {/* Grande carte - Socle de pilotage */}
-            <AnimatedSection className="md:col-span-8">
-              <div className="relative overflow-hidden rounded-3xl p-8 md:p-10 h-full min-h-[320px] bg-gradient-hero text-primary-foreground border border-border/10 shadow-card hover:shadow-card-hover transition-all duration-300">
+            {/* Grande carte bleue - 4 garanties concrètes avec chiffres */}
+            <AnimatedSection className="md:col-span-12">
+              <div className="relative overflow-hidden rounded-3xl p-8 md:p-10 bg-gradient-hero text-primary-foreground border border-border/10 shadow-card hover:shadow-card-hover transition-all duration-300">
                 <div className="absolute inset-0 opacity-20">
-                  <div className="absolute top-0 left-0 w-[500px] h-[300px] rounded-full bg-pulse-turquoise blur-[120px]" />
-                  <div className="absolute bottom-0 right-0 w-[400px] h-[250px] rounded-full bg-pulse-azure blur-[100px]" />
+                  <div className="absolute top-0 left-0 w-[600px] h-[400px] rounded-full bg-pulse-turquoise blur-[120px]" />
+                  <div className="absolute bottom-0 right-0 w-[500px] h-[300px] rounded-full bg-pulse-azure blur-[100px]" />
                 </div>
                 <div className="relative z-10">
                   <div className="text-xs font-bold uppercase tracking-[0.14em] text-primary-foreground/60 mb-4">
-                    LE SOCLE DE PILOTAGE
+                    NOS ENGAGEMENTS
                   </div>
                   <Sparkles className="w-10 h-10 text-pulse-turquoise mb-4" />
-                  <h3 className="font-display text-2xl md:text-3xl font-bold mb-6 max-w-md text-primary-foreground">
-                    Le socle de pilotage PulseCX
+                  <h3 className="font-display text-2xl md:text-3xl font-bold mb-8 text-primary-foreground">
+                    4 garanties concrètes pour votre pilotage
                   </h3>
-                  <ul className="space-y-4">
-                    {pilotageFeatures.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3 group">
-                        <div className="w-5 h-5 mt-0.5 flex-shrink-0">
-                          <svg className="w-5 h-5 text-pulse-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <span className="text-primary-foreground/80 leading-relaxed group-hover:text-pulse-turquoise transition-colors duration-300">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {/* Garantie 1 */}
+                    <div className="group">
+                      <div className="text-4xl md:text-5xl font-display font-bold text-pulse-turquoise mb-2">X%</div>
+                      <div className="text-sm font-semibold text-primary-foreground mb-1">Transparence</div>
+                      <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                        Accès en temps réel à vos indicateurs et reporting détaillé
+                      </p>
+                    </div>
+
+                    {/* Garantie 2 */}
+                    <div className="group">
+                      <div className="text-4xl md:text-5xl font-display font-bold text-pulse-turquoise mb-2">-X%</div>
+                      <div className="text-sm font-semibold text-primary-foreground mb-1">Délais de traitement</div>
+                      <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                        Objectif contractuel atteint dès les 3 premiers mois
+                      </p>
+                    </div>
+
+                    {/* Garantie 3 */}
+                    <div className="group">
+                      <div className="text-4xl md:text-5xl font-display font-bold text-pulse-turquoise mb-2">X%</div>
+                      <div className="text-sm font-semibold text-primary-foreground mb-1">SLA atteint</div>
+                      <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                        Engagement contractuel avec pénalités en cas de non-respect
+                      </p>
+                    </div>
+
+                    {/* Garantie 4 */}
+                    <div className="group">
+                      <div className="text-4xl md:text-5xl font-display font-bold text-pulse-turquoise mb-2">X/X</div>
+                      <div className="text-sm font-semibold text-primary-foreground mb-1">Satisfaction client</div>
+                      <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                        Score CSAT mesuré et publié mensuellement
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
@@ -740,19 +762,19 @@ const Index = () => {
                 </p>
                 <div className="grid grid-cols-2 gap-3 mt-2">
                   <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 text-center">
-                    <div className="font-display text-xl font-bold text-pulse-turquoise">98%</div>
+                    <div className="font-display text-xl font-bold text-pulse-turquoise">X%</div>
                     <div className="text-xs text-muted-foreground">SLA atteint</div>
                   </div>
                   <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 text-center">
-                    <div className="font-display text-xl font-bold text-pulse-azure">4.8/5</div>
+                    <div className="font-display text-xl font-bold text-pulse-azure">X/X</div>
                     <div className="text-xs text-muted-foreground">CSAT</div>
                   </div>
                   <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 text-center">
-                    <div className="font-display text-xl font-bold text-pulse-turquoise">-35%</div>
+                    <div className="font-display text-xl font-bold text-pulse-turquoise">-X%</div>
                     <div className="text-xs text-muted-foreground">Temps traitement</div>
                   </div>
                   <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-3 text-center">
-                    <div className="font-display text-xl font-bold text-pulse-azure">99.5%</div>
+                    <div className="font-display text-xl font-bold text-pulse-azure">X%</div>
                     <div className="text-xs text-muted-foreground">Qualité</div>
                   </div>
                 </div>
@@ -760,33 +782,131 @@ const Index = () => {
             </AnimatedSection>
 
             {/* Grande carte - Amélioration continue */}
-            <AnimatedSection className="md:col-span-8" delay={300}>
-              <div className="relative overflow-hidden rounded-3xl p-8 md:p-10 h-full min-h-[280px] border border-border shadow-card hover:shadow-card-hover transition-all duration-300" style={{
-                background: "radial-gradient(600px 250px at 80% 20%, hsl(168 75% 53% / 0.12), transparent 60%), radial-gradient(500px 200px at 20% 80%, hsl(204 73% 46% / 0.08), transparent 60%), hsl(0 0% 100%)"
-              }}>
-                <div className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground mb-4">
-                  AMÉLIORATION CONTINUE
+            <AnimatedSection className="md:col-span-4" delay={300}>
+              <div className="relative overflow-hidden rounded-3xl p-8 md:p-10 h-full min-h-[280px] border border-border shadow-card hover:shadow-card-hover transition-all duration-300 bg-card">
+                <div className="absolute inset-0 opacity-30">
+                  <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-pulse-turquoise blur-[100px]" />
+                  <div className="absolute bottom-0 left-0 w-[200px] h-[200px] rounded-full bg-pulse-azure blur-[80px]" />
                 </div>
-                <div className="w-12 h-12 rounded-2xl bg-pulse-azure/10 border border-pulse-azure/20 flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-pulse-azure" />
+                <div className="relative z-10">
+                  <div className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground mb-4">
+                    AMÉLIORATION CONTINUE
+                  </div>
+                  <div className="w-12 h-12 rounded-2xl bg-pulse-azure/10 border border-pulse-azure/20 flex items-center justify-center mb-4">
+                    <Zap className="w-6 h-6 text-pulse-azure" />
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-foreground mb-3">
+                    Plan d'amélioration basé sur données et feedbacks terrain
+                  </h3>
+                  <p className="text-muted-foreground font-medium leading-relaxed max-w-lg mb-5">
+                    Nos actions correctives sont déclenchées par des alertes automatiques et validées lors de revues opérationnelles hebdomadaires.
+                  </p>
+                  <ul className="flex flex-wrap gap-4">
+                    <li className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-pulse-turquoise" /> Alertes automatiques
+                    </li>
+                    <li className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-pulse-turquoise" /> Revues hebdomadaires
+                    </li>
+                    <li className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                      <CheckCircle2 className="w-4 h-4 text-pulse-turquoise" /> Plans d'action correctifs
+                    </li>
+                  </ul>
                 </div>
-                <h3 className="font-display text-2xl font-bold text-foreground mb-3">
-                  Plan d'amélioration basé sur données et feedbacks terrain
+              </div>
+            </AnimatedSection>
+
+            {/* Carte - Ce que vous gagnez */}
+            <AnimatedSection className="md:col-span-6" delay={350}>
+              <div className="rounded-3xl p-7 h-full bg-card border border-border shadow-card hover:shadow-card-hover hover:border-emerald-500/30 transition-all duration-300 group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-xs font-bold uppercase tracking-[0.14em] text-emerald-600">
+                    VALEUR AJOUTÉE
+                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
+                    <TrendingUp className="w-5 h-5 text-emerald-600" />
+                  </div>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-4">
+                  Ce que vous <span className="text-emerald-600">gagnez</span>
                 </h3>
-                <p className="text-muted-foreground font-medium leading-relaxed max-w-lg mb-5">
-                  Nos actions correctives sont déclenchées par des alertes automatiques et validées lors de revues opérationnelles hebdomadaires.
-                </p>
-                <ul className="flex flex-wrap gap-4">
-                  <li className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                    <CheckCircle2 className="w-4 h-4 text-pulse-turquoise" /> Alertes automatiques
-                  </li>
-                  <li className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                    <CheckCircle2 className="w-4 h-4 text-pulse-turquoise" /> Revues hebdomadaires
-                  </li>
-                  <li className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                    <CheckCircle2 className="w-4 h-4 text-pulse-turquoise" /> Plans d'action correctifs
-                  </li>
-                </ul>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-emerald-50/50 border border-emerald-100">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-bold text-foreground text-sm">Visibilité totale</div>
+                      <div className="text-xs text-muted-foreground">Pilotez vos opérations en temps réel</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-emerald-50/50 border border-emerald-100">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-bold text-foreground text-sm">Performance garantie</div>
+                      <div className="text-xs text-muted-foreground">Des objectifs clairs et mesurés</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-emerald-50/50 border border-emerald-100">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-bold text-foreground text-sm">Agilité opérationnelle</div>
+                      <div className="text-xs text-muted-foreground">Adaptez vos ressources en temps réel</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-emerald-50/50 border border-emerald-100">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-bold text-foreground text-sm">Amélioration continue</div>
+                      <div className="text-xs text-muted-foreground">+X% de productivité/an en moyenne</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Carte - Ce que vous évitez */}
+            <AnimatedSection className="md:col-span-6" delay={400}>
+              <div className="rounded-3xl p-7 h-full bg-card border border-border shadow-card hover:shadow-card-hover hover:border-rose-500/30 transition-all duration-300 group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-xs font-bold uppercase tracking-[0.14em] text-rose-600">
+                    RISQUES ÉLIMINÉS
+                  </div>
+                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center group-hover:bg-rose-500/20 transition-colors">
+                    <Shield className="w-5 h-5 text-rose-600" />
+                  </div>
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-4">
+                  Ce que vous <span className="text-rose-600">évitez</span>
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-rose-50/50 border border-rose-100">
+                    <X className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-bold text-foreground text-sm">Frais cachés</div>
+                      <div className="text-xs text-muted-foreground">Prix transparent, sans surprise</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-rose-50/50 border border-rose-100">
+                    <X className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-bold text-foreground text-sm">Délais non respectés</div>
+                      <div className="text-xs text-muted-foreground">SLA contractuels avec pénalités</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-rose-50/50 border border-rose-100">
+                    <X className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-bold text-foreground text-sm">Turnover des équipes</div>
+                      <div className="text-xs text-muted-foreground">&lt;X% de turnover annuel</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 p-3 rounded-xl bg-rose-50/50 border border-rose-100">
+                    <X className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-bold text-foreground text-sm">Effet "boîte noire"</div>
+                      <div className="text-xs text-muted-foreground">Reporting hebdomadaire détaillé</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </AnimatedSection>
           </div>
@@ -918,307 +1038,28 @@ const Index = () => {
       </section>
 
       {/* CTA Final - Garde son style hero */}
-      <section className="py-24 relative overflow-hidden">
-        {/* Background section plus flou */}
-        <div className="absolute inset-0 bg-gradient-to-br from-pulse-turquoise/20 via-pulse-azure/15 to-pulse-turquoise/20" />
-        <div className="absolute inset-0 backdrop-blur-md" />
-
-        {/* Effets de lumière discrets */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-pulse-turquoise/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[200px] bg-pulse-azure/10 rounded-full blur-[100px]" />
-
-        <div className="container px-6 relative z-10">
+      <section className="py-24 bg-gradient-hero">
+        <div className="container mx-auto px-6 text-center">
           <AnimatedSection>
-            {/* Conteneur avec dégradé turquoise/azure subtil */}
-            <div className="max-w-8xl mx-auto bg-gradient-to-br from-pulse-turquoise/15 via-pulse-azure/10 to-pulse-turquoise/15 backdrop-blur-sm rounded-3xl border border-pulse-turquoise/20 p-12 shadow-xl ml-0 md:ml-10 mr-0 md:mr-10">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-black mb-6">
-                Discutons de vos opérations et de vos objectifs.
-              </h2>
-              <p className="text-gray-700 text-lg mb-10 max-w-2xl">
-                Nous analysons vos volumes, canaux et objectifs pour définir un périmètre d'externalisation et un cadre de pilotage adapté.
-              </p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
+              Discutons de vos opérations et de vos objectifs.
+            </h2>
+            <p className="text-primary-foreground/70 text-lg mb-10 max-w-2xl mx-auto">
+              Nous analysons vos volumes, canaux et objectifs pour définir un périmètre d'externalisation et un cadre de pilotage adapté.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
-                <Button variant="hero" size="lg" className="text-base px-10 py-6 bg-gradient-to-r from-pulse-turquoise to-pulse-azure hover:shadow-lg hover:shadow-pulse-turquoise/25 transition-all duration-300">
+                <Button variant="hero" size="lg" className="text-base px-10 py-6">
                   Planifier un échange <ArrowRight className="w-5 h-5 ml-1" />
+                </Button>
+              </Link>
+              <Link to="/services">
+                <Button variant="hero-outline" size="lg" className="text-base px-10 py-6">
+                  Découvrir nos offres
                 </Button>
               </Link>
             </div>
           </AnimatedSection>
-        </div>
-      </section>
-
-      {/* KPIs - Garde son style hero */}
-      <section className="py-24 bg-gradient-hero">
-        <div className="container mx-auto px-6">
-          <AnimatedSection className="text-center mb-16">
-            <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider">Performance</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mt-3">
-              Des résultats mesurables
-            </h2>
-          </AnimatedSection>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {kpis.map((k, i) => (
-              <AnimatedSection key={k.label} delay={i * 100} className="text-center">
-                <div className="text-5xl font-display font-bold text-pulse-turquoise mb-2">
-                  <CountUp end={k.value} suffix={k.suffix} />
-                </div>
-                <p className="text-primary-foreground/70">{k.label}</p>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* Process - Style dégradé */}
-      {/* <section className="py-24 bg-gradient-to-tr from-pulse-azure/5 to-pulse-turquoise/5">
-        <div className="container mx-auto px-6">
-          <AnimatedSection className="text-center mb-16">
-            <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider">Notre méthode</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3">
-              Un processus éprouvé
-            </h2>
-          </AnimatedSection>
-          <div className="relative">
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-accent opacity-20 -translate-y-1/2" />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {processSteps.map((s, i) => (
-                <AnimatedSection key={s.step} delay={i * 150}>
-                  <div className="text-center relative">
-                    <div className="w-16 h-16 mx-auto rounded-full bg-gradient-accent flex items-center justify-center mb-4 relative z-10">
-                      <span className="font-display font-bold text-primary text-lg">{s.step}</span>
-                    </div>
-                    <h3 className="font-display text-xl font-bold text-foreground mb-2">{s.title}</h3>
-                    <p className="text-sm text-muted-foreground">{s.desc}</p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Section : L'expérience PulseCX en images */}
-      <section className="py-24 bg-gradient-to-br from-pulse-turquoise/5 to-pulse-azure/5">
-        <div className="container mx-auto px-6">
-          <AnimatedSection className="text-center mb-16">
-            <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider">En images</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3">
-              L'expérience PulseCX
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
-              Découvrez notre environnement de travail et nos équipes en action
-            </p>
-          </AnimatedSection>
-
-          {/* Première rangée - Grande carte + 2 petites */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6 ml-0 md:ml-10 mr-0 md:mr-10">
-
-            {/* Grande carte - 2 colonnes */}
-            <AnimatedSection className="md:col-span-2">
-              <div className="group relative overflow-hidden rounded-2xl aspect-[16/9] md:aspect-[2/1] bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                  alt="Équipe PulseCX"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-pulse-turquoise/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
-                  <div>
-                    <h3 className="font-display text-2xl font-bold text-white">Collaboration d'équipe</h3>
-                    <p className="text-white/90">Plus de 50 experts à votre service</p>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Carte standard - 1 colonne */}
-            <AnimatedSection delay={50} className="md:col-span-1">
-              <div className="group relative overflow-hidden rounded-2xl aspect-square bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Dashboard"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-pulse-azure/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <h3 className="font-display text-lg font-bold text-white">KPIs temps réel</h3>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Carte standard - 1 colonne */}
-            <AnimatedSection delay={100} className="md:col-span-1">
-              <div className="group relative overflow-hidden rounded-2xl aspect-square bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Support"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-pulse-turquoise/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <h3 className="font-display text-lg font-bold text-white">Support 24/7</h3>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-
-          {/* Deuxième rangée - 2 petites + grande carte */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6 ml-0 md:ml-10 mr-0 md:mr-10">
-
-            {/* Carte standard - 1 colonne */}
-            <AnimatedSection delay={150} className="md:col-span-1">
-              <div className="group relative overflow-hidden rounded-2xl aspect-square bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Formation"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-pulse-azure/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <h3 className="font-display text-lg font-bold text-white">Formation continue</h3>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Carte standard - 1 colonne */}
-            <AnimatedSection delay={200} className="md:col-span-1">
-              <div className="group relative overflow-hidden rounded-2xl aspect-square bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                  alt="Innovation"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-pulse-turquoise/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <h3 className="font-display text-lg font-bold text-white">Innovation</h3>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Grande carte - 2 colonnes */}
-            <AnimatedSection delay={250} className="md:col-span-2">
-              <div className="group relative overflow-hidden rounded-2xl aspect-[16/9] md:aspect-[2/1] bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                  alt="Relation client"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-pulse-azure/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
-                  <div>
-                    <h3 className="font-display text-2xl font-bold text-white">Relation client</h3>
-                    <p className="text-white/90">Une approche personnalisée</p>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-
-          {/* Troisième rangée - Une seule carte (pas trop haute) */}
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-6 ml-0 md:ml-10 mr-0 md:mr-10">
-            <AnimatedSection delay={300}>
-              <div className="group relative overflow-hidden rounded-2xl aspect-[16/5] bg-card border border-border shadow-card hover:shadow-card-hover transition-all duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-                  alt="Bureau moderne PulseCX"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-pulse-turquoise/80 to-pulse-azure/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                  <div className="text-center">
-                    <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
-                      Un environnement de travail moderne
-                    </h3>
-                    <p className="text-white/90">
-                      Des espaces conçus pour la collaboration et l'innovation
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-
-          {/* Bouton Voir plus */}
-          <AnimatedSection delay={350} className="text-center mt-12">
-            <Link to="/nos-realisations">
-              <Button variant="outline" size="lg" className="group border-pulse-turquoise text-pulse-turquoise hover:bg-pulse-turquoise hover:text-white transition-all duration-300 px-8 py-6 text-base">
-                Voir plus de réalisations
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Différenciation - Style dégradé */}
-      <section className="py-24 bg-gradient-to-br from-pulse-turquoise/5 to-pulse-azure/5 relative overflow-hidden">
-        {/* Éléments décoratifs de fond */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 rounded-full bg-pulse-turquoise/5 blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-72 h-72 rounded-full bg-pulse-azure/5 blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <AnimatedSection className="text-center mb-16">
-            <span className="text-sm font-semibold text-pulse-turquoise uppercase tracking-wider">Pourquoi PulseCX</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3">
-              L'excellence opérationnelle, <span className="text-gradient">par design</span>
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-4">
-              Quatre piliers fondamentaux qui font notre différence
-            </p>
-          </AnimatedSection>
-
-          {/* Grille avec cartes animées */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 ml-0 md:ml-10 mr-0 md:mr-10">
-            {differentiators.map((item, index) => (
-              <AnimatedSection key={item.label} delay={index * 100}>
-                <div className="group relative h-full perspective-1000">
-                  {/* Effet de carte 3D */}
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-pulse-turquoise to-pulse-azure rounded-2xl opacity-0 group-hover:opacity-100 blur transition-all duration-500" />
-
-                  {/* Carte principale */}
-                  <div className="relative bg-card rounded-2xl p-8 border border-border group-hover:border-transparent transition-all duration-300 h-full transform group-hover:-translate-y-2 group-hover:shadow-2xl">
-                    {/* Icône avec animation */}
-                    <div className="relative mb-6">
-                      <div className="absolute inset-0 bg-gradient-to-r from-pulse-turquoise/20 to-pulse-azure/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
-                      <div className="relative w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-pulse-turquoise/10 to-pulse-azure/10 flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
-                        <item.icon className="w-10 h-10 text-pulse-turquoise group-hover:text-pulse-azure transition-colors duration-300" />
-                      </div>
-
-                      {/* Badge numéro */}
-                      <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-gradient-to-br from-pulse-turquoise to-pulse-azure flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
-                        <span className="text-white text-sm font-bold">0{index + 1}</span>
-                      </div>
-                    </div>
-
-                    {/* Contenu */}
-                    <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-pulse-turquoise transition-colors">
-                      {item.label}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {item.desc}
-                    </p>
-
-                    {/* Ligne décorative animée */}
-                    <div className="absolute bottom-6 left-8 right-8 h-0.5 bg-gradient-to-r from-pulse-turquoise/0 via-pulse-turquoise/50 to-pulse-azure/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          {/* Section supplémentaire avec des chiffres clés */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            {[
-              { value: "98%", label: "Clients satisfaits", icon: Star },
-              { value: "500+", label: "Projets réalisés", icon: TrendingUp },
-              { value: "24/7", label: "Support disponible", icon: Clock },
-              { value: "10+", label: "Années d'expérience", icon: Award },
-            ].map((stat, i) => (
-              <AnimatedSection key={i} delay={400 + i * 50}>
-                <div className="bg-card/50 backdrop-blur-sm rounded-xl p-4 text-center border border-border hover:border-pulse-turquoise/30 transition-all duration-300 group">
-                  <stat.icon className="w-5 h-5 text-pulse-turquoise mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                  <div className="font-display font-bold text-foreground text-lg">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground">{stat.label}</div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
         </div>
       </section>
 

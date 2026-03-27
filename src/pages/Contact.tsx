@@ -32,7 +32,7 @@ const Contact = () => {
               Discutons de <span className="text-gradient">vos besoins</span>
             </h1>
             <p className="text-xl text-primary-foreground/70 max-w-2xl">
-              Contactez nos experts pour obtenir votre devis gratuit et construire ensemble une solution sur mesure.
+              Nous analysons vos volumes, vos canaux et vos objectifs pour vous proposer un cadre adapté.
             </p>
           </AnimatedSection>
         </div>

@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
+// Importez vos logos
+import logoClair from "@/assets/3.png"; // Logo pour fond sombre (navbar transparente)
+import logoSombre from "@/assets/4.png"; // Logo pour fond clair (navbar scrolled)
 
 const services = [
   { name: "Customer Support & CX Operations", href: "/services/customer-experience" },
@@ -27,6 +30,11 @@ const Navbar = () => {
     setServicesOpen(false);
   }, [location]);
 
+  // Sélectionnez le logo en fonction de l'état du scroll
+  // Quand scrolled = true (fond clair) -> logo sombre
+  // Quand scrolled = false (fond transparent) -> logo clair
+  const currentLogo = scrolled ? logoSombre : logoClair;
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -36,14 +44,13 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-20 px-6">
-        {/* Logo */}
+        {/* Logo - Version avec image */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-gradient-accent flex items-center justify-center">
-            <span className="text-primary-foreground font-display font-bold text-lg">P</span>
-          </div>
-          <span className={`font-display font-bold text-xl ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
-            Pulse<span className="text-gradient">CX</span>
-          </span>
+          <img 
+            src={currentLogo} 
+            alt="PulseCX" 
+            className="h-40 w-auto" // Ajustez la hauteur selon vos besoins
+          />
         </Link>
 
         {/* Desktop Nav */}
